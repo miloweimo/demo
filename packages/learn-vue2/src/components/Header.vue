@@ -8,8 +8,8 @@
     color="#fff"
     class="header"
   >
-    <span>{{ now.format("YYYY-MM-DD HH:mm:ss")}}</span>
-    {{reload()}}
+    <span>{{ now.format("YYYY-MM-DD HH:mm:ss") }}</span>
+    {{ reload() }}
     <v-spacer></v-spacer>
     <span class="text-h1">{{ "Maintenance" }}</span>
     <v-spacer></v-spacer>
@@ -20,20 +20,16 @@
 <script>
 import moment from "moment";
 
-
 export default {
   name: "Header",
   data: function () {
-    return { now: moment(), update: true };
+    return { now: moment() };
   },
   methods: {
     reload() {
-      // console.log('调用reload()!')
-      if(this.update === true){
-        setTimeout(()=>{
-          this.now = moment()
-        },1000)
-      }
+      setTimeout(() => {
+        this.now = moment();
+      }, 1000);
     },
   },
 };
