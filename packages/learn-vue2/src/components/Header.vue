@@ -1,6 +1,15 @@
 <template>
-  <v-app-bar dense flat app height="40" width="100%" color="#fff">
-    <span>{{ moment().format('YYYY-MM-DD HH:mm:ss') }}</span>
+  <v-app-bar
+    dense
+    flat
+    app
+    height="40"
+    width="100%"
+    color="#fff"
+    class="header"
+  >
+    <span>{{ now.format("YYYY-MM-DD HH:mm:ss")}}</span>
+    {{reload()}}
     <v-spacer></v-spacer>
     <span class="text-h1">{{ "Maintenance" }}</span>
     <v-spacer></v-spacer>
@@ -11,14 +20,35 @@
 <script>
 import moment from "moment";
 
+
 export default {
   name: "Header",
   data: function () {
-    return { moment };
+    return { now: moment(), update: true };
+  },
+  methods: {
+    reload() {
+      // console.log('调用reload()!')
+      if(this.update === true){
+        setTimeout(()=>{
+          this.now = moment()
+        },1000)
+      }
+    },
   },
 };
 </script>
 
 <style>
-
+#header {
+  line-height: 2rem;
+  font-family: Roboto, sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 400;
+  letter-spacing: normal !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  margin-right: 20px !important;
+}
 </style>
