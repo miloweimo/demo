@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     reload() {
-      setTimeout(() => {
+      setInterval(() => {
         this.now = moment();
       }, 1000);
     },
