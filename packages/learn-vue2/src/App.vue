@@ -9,7 +9,7 @@
 import Header from "./components/Header.vue";
 import Main from "./components/Main.vue";
 import loginService from "./services/login";
-require("dotenv").config();
+import infoService from "./services/info"
 
 // let sessionId = "5E84F7BBE3E43605C3D1F7F173D3F70D.tomcat1";
 // const getMs = async () => {
@@ -17,20 +17,22 @@ require("dotenv").config();
 //   console.log('ms',ms);
 // }
 // getMs()
-const identifier = "app@shopworx.com";
-const password = "entrib";
+console.log('process.env',process.env)
+const identifier = process.env.IDENTIFIER;
+const password = process.env.PASSWORD;
 const handleLogin = async () => {
   console.log("login", identifier, password);
 
   try {
-    const sessionId = await loginService.login({ identifier, password });
+    const sessionInfo = await loginService.login({ identifier, password });
 
     /**
      * !!! token store in localStorage !!!
      */
-    // window.localStorage.setItem("sessionId", JSON.stringify(sessionId));
+    // window.localStorage.setItem("sessionInfo", JSON.stringify(sessionInfo));
 
-    console.log("login successed", "sessionId:", sessionId);
+    console.log("login successed", "sessionInfo:", sessionInfo);
+    infoService.setSessionInfo(sessionInfo)
   } catch (exception) {
     console.log("login failed:", exception);
   }

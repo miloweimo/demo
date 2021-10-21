@@ -1,5 +1,5 @@
 ### sessionId
-POST http://192.168.1.56/server/authenticate
+POST http://192.168.56.102/server/authenticate
 Content-Type: application/json
 loginType:INFINITY
 
@@ -9,7 +9,7 @@ loginType:INFINITY
 }
 
 ### servertime
-get http://192.168.30.120/server/servertime
+get http://192.168.56.102/server/servertime
 # Content-Type: application/json
 # loginType:INFINITY
-sessionId:5E84F7BBE3E43605C3D1F7F173D3F70D.tomcat1
+sessionId:1331BC9C816B30310598E62116F3109D.tomcat1
