@@ -8,7 +8,6 @@ module.exports = {
         changeOrigin: true,
       },
     },
-    target: 'node',
     port:3000
   },
 };
