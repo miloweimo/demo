@@ -8,8 +8,7 @@
     color="#fff"
     class="header"
   >
-    <span>{{ now.format("YYYY-MM-DD HH:mm:ss") }}</span>
-    {{ reload() }}
+    <span>{{ moment(servertime).format("YYYY-MM-DD HH:mm:ss") }}</span>
     <v-spacer></v-spacer>
     <span class="text-h1">{{ "Maintenance" }}</span>
     <v-spacer></v-spacer>
@@ -19,18 +18,32 @@
 
 <script>
 import moment from "moment";
+import store from "../store";
+import { mapState, mapMutations } from "vuex";
+import infoService from "../services/info";
+
+const updateServertime = async () => {
+  const servertime = await infoService.getServertime();
+  store.commit("setServertime", servertime.results);
+};
+updateServertime();
+
+setInterval(() => {
+  store.commit("setServertime", store.state.servertime + 1000);
+}, 1000);
 
 export default {
   name: "Header",
-  data: function () {
-    return { now: moment() };
+  data: function() {
+    return { moment };
+  },
+  computed: {
+    ...mapState({
+      servertime: (state) => state.servertime,
+    }),
   },
   methods: {
-    reload() {
-      setInterval(() => {
-        this.now = moment();
-      }, 1000);
-    },
+    ...mapMutations(["setServertime"]),
   },
 };
 </script>

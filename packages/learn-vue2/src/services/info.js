@@ -1,6 +1,6 @@
 import axios from "axios";
 const baseURL = "";
-let sessionInfo = null;
+let sessionInfo = localStorage.sessionId;
 
 const setSessionInfo = (newSessionInfo) => {
   sessionInfo = newSessionInfo;
@@ -12,8 +12,9 @@ const axiosInstance = axios.create({
 });
 
 const getServertime = async () => {
-  //   console.log("getServertime,sessionId:", sessionId);
-  const config = { headers: { sessionId: sessionInfo.sessionId } };
+  let sessionId = sessionInfo.sessionId ? sessionInfo.sessionId : localStorage.sessionId
+  // console.log("getServertime,sessionId:", sessionId);
+  const config = { headers: { sessionId } };
   const response = await axiosInstance.get("/server/servertime", config);
   return response.data;
 };

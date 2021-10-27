@@ -12,4 +12,4 @@ loginType:INFINITY
 get http://192.168.56.102/server/servertime
 # Content-Type: application/json
 # loginType:INFINITY
-sessionId:1331BC9C816B30310598E62116F3109D.tomcat1
+sessionId:058BB5ED88F8988ED47463B30D569091.tomcat1
