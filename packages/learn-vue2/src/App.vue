@@ -1,25 +1,34 @@
 <template>
   <div id="app">
-    <Header />
-    <Main />
+    <v-app>
+      <!-- <Header /> -->
+      <!-- <Main /> -->
+      <hr />
+      <Hello />
+    </v-app>
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import Main from "./components/Main.vue";
+// import Header from "./components/Header.vue";
+// import Main from "./components/Main.vue";
+import Hello from "./components/Hello.vue";
 import { mapMutations } from "vuex";
 
 export default {
   name: "App",
   components: {
-    Main,
-    Header,
+    // Main,
+    // Header,
+    Hello,
   },
   methods: {
     ...mapMutations(["setServertime"]),
   },
   computed: {},
+  mounted() {
+    // console.log("App mounted,this:", this);
+  },
 };
 </script>
 

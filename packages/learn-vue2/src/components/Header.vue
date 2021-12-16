@@ -19,17 +19,20 @@
 <script>
 import moment from "moment";
 import store from "../store";
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapMutations, mapActions } from "vuex";
 import infoService from "../services/info";
+// let servertime;
 
-const updateServertime = async () => {
-  const servertime = await infoService.getServertime();
-  store.commit("setServertime", servertime.results);
+const initServertime = async () => {
+  const servertimeres = await infoService.getServertime();
+  store.commit("setServertime", servertimeres.results);
+  return;
 };
-updateServertime();
-
+initServertime();
 setInterval(() => {
-  store.commit("setServertime", store.state.servertime + 1000);
+  if (store.state.servertime) {
+    store.commit("addServertime", 1000);
+  }
 }, 1000);
 
 export default {
@@ -44,6 +47,7 @@ export default {
   },
   methods: {
     ...mapMutations(["setServertime"]),
+    ...mapActions(["updateServertime"]),
   },
 };
 </script>
