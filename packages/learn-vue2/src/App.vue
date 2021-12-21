@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <v-app>
-      <Home />
+    <v-app class="grey lighten-3">
+      <Navbar />
     </v-app>
   </div>
 </template>
 
 <script>
-import Home from "./components/Home.vue";
+import Navbar from "./components/Navbar.vue";
 
 export default {
   name: "App",
   components: {
-    Home,
+    Navbar,
   },
 };
 </script>
