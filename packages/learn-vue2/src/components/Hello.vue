@@ -1,5 +1,6 @@
 <template>
   <v-content>
+    <h3>Hello</h3>
     <hr />
     // 文字颜色
     <router-view></router-view>
