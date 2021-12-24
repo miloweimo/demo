@@ -6,7 +6,7 @@ import About from './components/About.vue'
 Vue.use(Router)
 
 export default new Router({
-  routers: [
+  routes: [
     {
       path: '/',
       name: 'dashboard',
