@@ -11,9 +11,9 @@
         <v-icon color="pink">mdi-menu</v-icon>
       </v-app-bar-nav-icon>
 
-      <v-btn depressed>
+      <v-app-bar-nav-icon depressed>
         <v-icon color="pink">mdi-exit-to-app</v-icon>
-      </v-btn>
+      </v-app-bar-nav-icon>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app class="pink lighten-3">
