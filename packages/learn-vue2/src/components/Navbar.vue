@@ -55,12 +55,9 @@ export default {
     return {
       drawer: true,
       items: [
-        {
-          title: "Dashboard",
-          icon: "mdi-view-dashboard",
-          linkto: "/",
-        },
+        { title: "Dashboard", icon: "mdi-view-dashboard", linkto: "/" },
         { title: "Photos", icon: "mdi-image", linkto: "/photos" },
+        { title: "Grids", icon: "mdi-grid", linkto: "/grids" },
         { title: "About", icon: "mdi-help-box", linkto: "/about" },
       ],
       right: null,
@@ -68,8 +65,8 @@ export default {
   },
   methods: {
     handle(path) {
-      console.log("new path", path);
-      console.log("old path", this.$router.currentRoute.fullPath);
+      // console.log("new path", path);
+      // console.log("old path", this.$router.currentRoute.fullPath);
 
       if (path === this.$router.currentRoute.fullPath) return;
       this.$router.push({ path: path });
