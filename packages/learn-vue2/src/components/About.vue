@@ -9,12 +9,21 @@
         Left aligned text on ltr and right aligned on rtl.
       </p>
     </v-container>
+    <v-btn depressed elevation="2" outlined @click="handleme"
+      >clickme 修改rtl文字阅读方向</v-btn
+    >
   </div>
 </template>
 
 <script>
 export default {
   name: "about",
+  methods: {
+    handleme() {
+      console.log(this.$vuetify, "翻转文字方向");
+      this.$vuetify.rtl = !this.$vuetify.rtl;
+    },
+  },
 };
 </script>
 
