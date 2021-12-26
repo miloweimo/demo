@@ -1,8 +1,6 @@
 <template>
   <div>
-    <v-content>
-      <h1>habcd</h1>
-      <h3>Hello</h3>
+      <h1 class="text--subtitle-1 grey--text">Hello</h1>
       <hr />
       // 文字颜色
       <router-view></router-view>
@@ -48,7 +46,6 @@
       <h1 class="text-button">new version</h1>
       <h1 class="text-caption">new version</h1>
       <h1 class="text-overline">new version</h1>
-    </v-content>
   </div>
 </template>
 

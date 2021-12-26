@@ -1,8 +1,15 @@
 <template>
-  <v-content>
-    <h3>About</h3>
-    <hr />
-  </v-content>
+  <div>
+    <h1 class="text--subtitle-1 grey--text">About</h1>
+    <v-container>
+      <p class="text-subtitle-2 text-center">
+        Agnostic RTL Alignment
+      </p>
+      <p class="text-start">
+        Left aligned text on ltr and right aligned on rtl.
+      </p>
+    </v-container>
+  </div>
 </template>
 
 <script>

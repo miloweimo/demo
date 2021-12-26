@@ -2,11 +2,8 @@
   <div id="app">
     <v-app class="grey lighten-3">
       <Navbar />
-      <v-main>
-        <!-- <v-container fluid> -->
-          <!-- 如果使用 vue-router -->
+      <v-main class="mx-4 my-1">
           <router-view></router-view>
-        <!-- </v-container> -->
       </v-main>
     </v-app>
   </div>
