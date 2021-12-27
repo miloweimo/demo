@@ -55,11 +55,11 @@ export default {
     return {
       drawer: true,
       items: [
-        { title: "Dashboard", icon: "mdi-view-dashboard", linkto: "/" },
-        { title: "Photos", icon: "mdi-image", linkto: "/photos" },
-        { title: "Grids", icon: "mdi-grid", linkto: "/grids" },
-        { title: "Layout", icon: "mdi-help-box", linkto: "/layout" },
         { title: "About", icon: "mdi-help-box", linkto: "/about" },
+        { title: "Dashboard", icon: "mdi-view-dashboard", linkto: "/" },
+        { title: "Hello", icon: "mdi-human-greeting-variant", linkto: "/hello" },
+        { title: "Layout", icon: "mdi-page-layout-body", linkto: "/layout" },
+        { title: "Grids", icon: "mdi-grid", linkto: "/grids" },
       ],
       right: null,
     };

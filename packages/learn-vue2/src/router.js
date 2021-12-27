@@ -16,8 +16,8 @@ export default new Router({
       component: Dashboard
     },
     {
-      path: '/photos',
-      name: 'photos',
+      path: '/hello',
+      name: 'hello',
       component: Hello
     },
     {
