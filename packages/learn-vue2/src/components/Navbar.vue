@@ -55,10 +55,12 @@ export default {
     return {
       drawer: true,
       items: [
-        { title: "About", icon: "mdi-help-box", linkto: "/about" },
+        { title: "About", icon: "mdi-spin mdi-star", linkto: "/about" },
         { title: "Dashboard", icon: "mdi-view-dashboard", linkto: "/" },
         { title: "Hello", icon: "mdi-human-greeting-variant", linkto: "/hello" },
+        { title: "Font", icon: "mdi-format-font", linkto: "/font" },
         { title: "Layout", icon: "mdi-page-layout-body", linkto: "/layout" },
+        { title: "Flex", icon: "mdi-animation", linkto: "/flex" },
         { title: "Grids", icon: "mdi-grid", linkto: "/grids" },
       ],
       right: null,

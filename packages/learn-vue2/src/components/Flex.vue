@@ -1,14 +1,8 @@
 <template>
   <div>
-    <h1 class="text--subtitle-1 grey--text">Grids</h1>
-    <a href="https://vuetifyjs.com/zh-Hans/features/breakpoints/"
-      >https://vuetifyjs.com/zh-Hans/features/breakpoints/</a
-    ><br />
-    <h2 class="text--subtitle-1 grey--text">网格系统</h2>
-    <hr />
-    <h3>
-      如何定义flex布局 flex style list
-    </h3>
+    <h1 class="text--subtitle-1 grey--text">flex</h1>
+    <h2>布局：vuetify的flex布局</h2>
+    <h3>如何定义flex布局 flex style list</h3>
     <div class="container">
       <div>
         1. 首先创建一个flex布局 <br />
@@ -46,7 +40,6 @@
         />
       </div>
     </div>
-    <br />
     <span>效果：</span>
     <ul class="flex-container">
       <li class="flex-item">1</li>
@@ -56,15 +49,17 @@
       <li class="flex-item">5</li>
       <li class="flex-item">6</li>
     </ul>
-    <hr />
-    <a href="https://vuetifyjs.com/zh-Hans/components/grids/#v-spacer"
-      ><span
-        >vuetify 的flex布局
-        https://vuetifyjs.com/zh-Hans/components/grids/#v-spacer</span
-      ></a
-    >
-
-    <p>v-container 里面来定义内容居中和水平填充内容</p>
+    <h3>vuetify 的flex元素</h3>
+    <template>
+      这个是template,不用管我
+      <v-card class="d-flex">
+        首先有一个容器，可以是任何元素，这里是v-card；
+        <div class="green">
+          这里是一个div，是v-card的子元素
+        </div>
+      </v-card>
+    </template>
+    <!-- <p>v-container 里面来定义内容居中和水平填充内容</p>
     <template>
       <v-container class="grey lighten-5">
         <div>
@@ -77,7 +72,27 @@
           vdshv 333
         </div>
       </v-container>
-    </template>
+    </template> -->
+
+    <h3>参考</h3>
+    <p>
+      <a
+        href="https://vuetifyjs.com/zh-Hans/introduction/why-vuetify/#section-529f80fd63075357"
+        >Vuetify 功能指南</a
+      >
+    </p>
+    <p>
+      <a
+        href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-backgrounds"
+        >Flexbox 完整指南</a
+      >
+    </p>
+    <p>
+      <a
+        href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-backgrounds"
+        >Vuetify 弹性布局</a
+      >
+    </p>
   </div>
 </template>
 
@@ -85,7 +100,7 @@
 import { component as VueCodeHighlight } from "vue-code-highlight";
 
 export default {
-  name: "grids",
+  name: "flex",
   components: {
     VueCodeHighlight,
   },
@@ -105,7 +120,7 @@ export default {
   /* 3. 然后定义如何分布剩余空间
     align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
   */
-  justify-content: center;
+  justify-content: space-around;
 
   list-style: none;
 }

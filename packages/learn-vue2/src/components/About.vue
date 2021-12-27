@@ -1,8 +1,9 @@
 <template>
   <div>
     <h1 class="text--subtitle-1 grey--text">About</h1>
+    <h2>测试vuejs+vuetify</h2>
     <v-container>
-      <p class="text-subtitle-2 text-center">
+      <p class="text-subtitle-2 text-center pink--text">
         Agnostic RTL Alignment
       </p>
       <p class="text-start">
@@ -24,7 +25,8 @@ export default {
   name: "about",
   methods: {
     handleme() {
-      console.log(this.$vuetify, "翻转文字方向");``
+      console.log(this.$vuetify, "翻转文字方向");
+      ``;
       this.$vuetify.rtl = !this.$vuetify.rtl;
     },
     handleTheme() {
