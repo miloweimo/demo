@@ -147,6 +147,15 @@
           align-stretch
         </v-card>
       </v-card>
+      <span>flex与自身对齐</span>
+      <template>
+        <v-card class="d-flex" v-for="j in justify" :key="j" height="100">
+          align-self-{{ j }}:
+          <v-card outlined class="orange lighten-3 pa-1 ma-1" :class="[n===2 && `align-self-${j}`]" v-for="n in 3" :key="n" >{{
+            n !== 2 ? "固定对齐元素" : "flex元素"
+          }}</v-card>
+        </v-card>
+      </template>
     </template>
 
     <h3>参考</h3>
@@ -178,6 +187,11 @@ export default {
   name: "flex",
   components: {
     VueCodeHighlight,
+  },
+  data() {
+    return {
+      justify: ["start", "end", "center", "baseline", "auto", "stretch"],
+    };
   },
 };
 </script>
