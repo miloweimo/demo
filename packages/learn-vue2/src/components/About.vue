@@ -10,15 +10,6 @@
       </p>
     </v-container>
 
-    <hr />
-    <hr />
-    <v-card :height="height">
-      这里显示不同设备的自动高度切换效果 当前设备大小为：{{
-        $vuetify.breakpoint.name
-      }}
-    </v-card>
-    <hr />
-    <hr />
     <v-btn depressed elevation="2" outlined class="primary" @click="handleme"
       >clickme 修改rtl文字阅读方向</v-btn
     >

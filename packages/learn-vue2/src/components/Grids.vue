@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1 class="text--subtitle-1 grey--text">Grids</h1>
+    <a href="https://vuetifyjs.com/zh-Hans/features/breakpoints/"
+      >https://vuetifyjs.com/zh-Hans/features/breakpoints/</a
+    ><br />
     <span class="text--subtitle-1 grey--text">网格系统</span>
     <hr />
     flex布局 flex style list <br />
@@ -51,6 +54,28 @@
       <li class="flex-item">5</li>
       <li class="flex-item">6</li>
     </ul>
+    <hr />
+    <a href="https://vuetifyjs.com/zh-Hans/components/grids/#v-spacer"
+      ><span
+        >vuetify 的flex布局
+        https://vuetifyjs.com/zh-Hans/components/grids/#v-spacer</span
+      ></a
+    >
+
+    <p>v-container 里面来定义内容居中和水平填充内容</p>
+    <template>
+      <v-container class="grey lighten-5">
+        <div>
+          vdnsjvj 11
+        </div>
+        <div>
+          vdshv d 222
+        </div>
+        <div>
+          vdshv 333
+        </div>
+      </v-container>
+    </template>
   </div>
 </template>
 

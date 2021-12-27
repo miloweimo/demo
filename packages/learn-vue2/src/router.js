@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard.vue'
 import Hello from './components/Hello.vue'
 import About from './components/About.vue'
 import Grids from './components/Grids.vue'
+import Layout from './components/Layout.vue'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/grids',
       name: 'grids',
       component: Grids
+    },
+    {
+      path: '/layout',
+      name: 'layout',
+      component: Layout
     },
   ]
 })
