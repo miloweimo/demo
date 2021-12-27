@@ -2,10 +2,10 @@
   <div>
     <h1 class="text--subtitle-1 grey--text">flex</h1>
     <h2>布局：vuetify的flex布局</h2>
-    <h3>如何定义flex布局 flex style list</h3>
+    <h3>0. 如何定义flex布局 flex style list</h3>
     <div class="container">
-      <div>
-        1. 首先创建一个flex布局 <br />
+      <v-card>
+        a. 首先创建一个flex布局 <br />
         <VueCodeHighlight language="css">
           <pre>
 .container {
@@ -15,9 +15,9 @@
 </pre
           >
         </VueCodeHighlight>
-      </div>
-      <div>
-        2. 选择一个flow direction 默认 row <br />
+      </v-card>
+      <v-card>
+        b. 选择一个flow direction 默认 row <br />
         <VueCodeHighlight language="css">
           <pre>
 .container {
@@ -30,15 +30,15 @@
           src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg"
           alt="flex-direction flex方向"
         />
-      </div>
-      <div>
-        3. 然后定义如何分布剩余空间 <br />
+      </v-card>
+      <v-card>
+        c. 然后定义如何分布剩余空间 <br />
         <img
           src="https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg"
           alt="align-content 对齐内容"
           style="height: 300px;"
         />
-      </div>
+      </v-card>
     </div>
     <span>效果：</span>
     <ul class="flex-container">
@@ -49,16 +49,21 @@
       <li class="flex-item">5</li>
       <li class="flex-item">6</li>
     </ul>
-    <h3>vuetify 的flex元素</h3>
+
+    <hr />
+    <h3>1. 在vuetify中使用flex元素</h3>
+
     <template>
       这个是template,不用管我
-      <v-card class="d-flex">
-        首先有一个容器，可以是任何元素，这里是v-card；
-        <div class="green">
+      <v-card class="d-flex pa-2">
+        首先这一个flex容器，可以是任何元素，这是v-card；class使用 .d-flex 或者 .d-[xs|sm|md|lg|xl]-flex
+        .d-inline-flex使用内联
+        <div class="green pa-1 ma-1" outlined v-for="n in 3" :key="n">
           这里是一个div，是v-card的子元素
         </div>
       </v-card>
     </template>
+
     <!-- <p>v-container 里面来定义内容居中和水平填充内容</p>
     <template>
       <v-container class="grey lighten-5">
