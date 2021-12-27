@@ -54,13 +54,37 @@
     <h3>1. 在vuetify中使用flex元素</h3>
 
     <template>
-      这个是template,不用管我
+      <!-- 这个是template,不用管我 -->
       <v-card class="d-flex pa-2">
-        首先这一个flex容器，可以是任何元素，这是v-card；class使用 .d-flex 或者 .d-[xs|sm|md|lg|xl]-flex
-        .d-inline-flex使用内联
+        <!-- 首先这一个flex容器，可以是任何元素，这是v-card；class使用 .d-flex 或者
+        .d-[xs|sm|md|lg|xl]-flex .d-inline-flex使用内联 -->
         <div class="green pa-1 ma-1" outlined v-for="n in 3" :key="n">
           这里是一个div，是v-card的子元素
         </div>
+      </v-card>
+    </template>
+
+    <br />
+    <hr />
+    <h3>2. 定义flex主轴方向</h3>
+    <template>
+      <v-card
+        class="d-flex flex-row ma-2"
+        :color="$vuetify.theme.dark ? 'purple darken-4' : 'pink'"
+      >
+        <v-card
+          v-for="n in 5"
+          :key="n"
+          class="ma-2"
+          style="height:50px;width:300px;"
+        >
+          this is {{ n }}!!
+        </v-card>
+      </v-card>
+      <v-card class="d-flex flex-column-reverse ma-2">
+        <v-card v-for="n in 3" :key="n" class="ma-2" style="height:50px;width:300px;">
+          this is {{ n }}!!
+        </v-card>
       </v-card>
     </template>
 
