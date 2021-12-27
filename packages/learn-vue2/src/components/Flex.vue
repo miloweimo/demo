@@ -50,9 +50,9 @@
       <li class="flex-item">6</li>
     </ul>
 
+    <br />
     <hr />
     <h3>1. 在vuetify中使用flex元素</h3>
-
     <template>
       <!-- 这个是template,不用管我 -->
       <v-card class="d-flex pa-2">
@@ -72,8 +72,13 @@
         class="d-flex flex-row ma-2"
         :color="$vuetify.theme.dark ? 'purple darken-4' : 'pink'"
       >
+        <v-card v-for="n in 5" :key="n" class="ma-2">
+          this is {{ n }}!!
+        </v-card>
+      </v-card>
+      <v-card class="d-flex flex-column-reverse ma-2">
         <v-card
-          v-for="n in 5"
+          v-for="n in 3"
           :key="n"
           class="ma-2"
           style="height:50px;width:300px;"
@@ -81,27 +86,68 @@
           this is {{ n }}!!
         </v-card>
       </v-card>
-      <v-card class="d-flex flex-column-reverse ma-2">
-        <v-card v-for="n in 3" :key="n" class="ma-2" style="height:50px;width:300px;">
-          this is {{ n }}!!
+    </template>
+
+    <br />
+    <hr />
+    <h3>3. 对齐：横轴对齐；纵轴对齐；自身对齐</h3>
+    <span>横轴对齐默认修改x轴</span>
+    <template>
+      <v-card class="d-flex justify-start ma-2">
+        <v-card v-for="n in 3" :key="n" class="ma-2">
+          justify-start
+        </v-card>
+      </v-card>
+      <v-card class="d-flex justify-end ma-2">
+        <v-card v-for="n in 3" :key="n" class="ma-2">
+          justify-end
+        </v-card>
+      </v-card>
+      <v-card class="d-flex justify-center ma-2">
+        <v-card v-for="n in 3" :key="n" class="ma-2">
+          justify-center
+        </v-card>
+      </v-card>
+      <v-card class="d-flex justify-space-around ma-2">
+        <v-card v-for="n in 3" :key="n" class="ma-2">
+          justify-space-around
+        </v-card>
+      </v-card>
+      <v-card class="d-flex justify-space-between ma-2">
+        <v-card v-for="n in 3" :key="n" class="ma-2">
+          justify-space-between
         </v-card>
       </v-card>
     </template>
-
-    <!-- <p>v-container 里面来定义内容居中和水平填充内容</p>
+    <span>纵轴对齐默认修改y轴项目</span>
     <template>
-      <v-container class="grey lighten-5">
-        <div>
-          vdnsjvj 11
-        </div>
-        <div>
-          vdshv d 222
-        </div>
-        <div>
-          vdshv 333
-        </div>
-      </v-container>
-    </template> -->
+      <v-card class="d-flex align-start ma-2" height="100">
+        <v-card v-for="n in 3" :key="n" class="ma-2 pa-1 pink lighten-3">
+          align-start
+        </v-card>
+      </v-card>
+      <v-card class="d-flex align-end ma-2" height="100">
+        <v-card v-for="n in 3" :key="n" class="ma-2 pa-1 pink lighten-3">
+          align-end
+        </v-card>
+      </v-card>
+      <v-card class="d-flex align-center ma-2" height="100">
+        <v-card v-for="n in 3" :key="n" class="ma-2 pa-1 pink lighten-3">
+          align-center
+        </v-card>
+      </v-card>
+      *alignment-baseline 属性指定了一个对象如何相对于它的父元素对齐
+      <v-card class="d-flex align-baseline ma-2" height="100">
+        <v-card v-for="n in 3" :key="n" class="ma-2 pa-1 pink lighten-3">
+          align-baseline
+        </v-card>
+      </v-card>
+      <v-card class="d-flex align-stretch ma-2" height="100">
+        <v-card v-for="n in 3" :key="n" class="ma-2 pa-1 pink lighten-3">
+          align-stretch
+        </v-card>
+      </v-card>
+    </template>
 
     <h3>参考</h3>
     <p>
