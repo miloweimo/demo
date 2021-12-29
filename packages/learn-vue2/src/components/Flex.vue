@@ -2,6 +2,7 @@
   <div>
     <h1 class="text--subtitle-1 grey--text">flex</h1>
     <h2>布局：vuetify的flex布局</h2>
+    <br />
     <h3>0. 如何定义flex布局 flex style list</h3>
     <div class="container">
       <v-card>
@@ -119,8 +120,8 @@
         </v-card>
       </v-card>
     </template>
-    <span>纵轴对齐默认修改y轴项目</span>
     <template>
+      <span>纵轴对齐默认修改y轴项目</span>
       <v-card class="d-flex align-start ma-2" height="100">
         <v-card v-for="n in 3" :key="n" class="ma-2 pa-1 pink lighten-3">
           align-start
@@ -147,15 +148,55 @@
           align-stretch
         </v-card>
       </v-card>
-      <span>flex与自身对齐</span>
+      <span>flex与自身对齐 class="align-self-baseline"</span>
       <template>
         <v-card class="d-flex" v-for="j in justify" :key="j" height="100">
           align-self-{{ j }}:
-          <v-card outlined class="orange lighten-3 pa-1 ma-1" :class="[n===2 && `align-self-${j}`]" v-for="n in 3" :key="n" >{{
-            n !== 2 ? "固定对齐元素" : "flex元素"
-          }}</v-card>
+          <v-card
+            outlined
+            class="orange lighten-3 pa-1 ma-1"
+            :class="[n === 2 && `align-self-${j}`]"
+            v-for="n in 3"
+            :key="n"
+            >{{ n !== 2 ? "固定对齐元素" : "flex元素" }}</v-card
+          >
         </v-card>
       </template>
+    </template>
+    <template>
+      <span>自动边距 class="mr-auto"</span>
+      <v-card class="d-flex" height="100">
+        <v-card
+          outlined
+          class="orange lighten-3 pa-1 ma-1"
+          v-for="n in 3"
+          :key="n"
+          :class="[n === 1 ? 'mr-auto' : '']"
+          >{{ n === 1 ? "设置了mr-auto" : "flex元素" }}</v-card
+        >
+      </v-card>
+      <v-card class="d-flex" height="100">
+        <v-card
+          outlined
+          class="orange lighten-3 pa-1 ma-1"
+          v-for="n in 3"
+          :key="n"
+          :class="[n === 3 ? 'ml-auto' : '']"
+          >{{ n === 3 ? "设置了ml-auto" : "flex元素" }}</v-card
+        >
+      </v-card>
+      <v-card class="d-flex flex-column" height="200">
+        <span>height="200"</span>
+        <v-card
+          outlined
+          width="200"
+          class="pa-1 ma-1"
+          v-for="n in 3"
+          :key="n"
+          :class="[n === 3 ? 'mt-auto ml-auto red lighten-2' : 'orange lighten-3 ']"
+          >{{ n === 3 ? "mt-auto ml-auto red lighten-2" : "flex元素" }}</v-card
+        >
+      </v-card>
     </template>
 
     <h3>参考</h3>
