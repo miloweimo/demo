@@ -91,8 +91,9 @@
 
     <br />
     <hr />
-    <h3>3. 对齐：横轴对齐；纵轴对齐；自身对齐</h3>
-    <span>横轴对齐默认修改x轴</span>
+    <h3>3. 对齐排版</h3>
+    <h4>对齐:横轴对齐</h4>
+    <span>默认修改x轴</span>
     <template>
       <v-card class="d-flex justify-start ma-2">
         <v-card v-for="n in 3" :key="n" class="ma-2">
@@ -120,8 +121,10 @@
         </v-card>
       </v-card>
     </template>
+
     <template>
-      <span>纵轴对齐默认修改y轴项目</span>
+      <h4>对齐:纵轴对齐</h4>
+      <span>默认修改y轴项目</span>
       <v-card class="d-flex align-start ma-2" height="100">
         <v-card v-for="n in 3" :key="n" class="ma-2 pa-1 pink lighten-3">
           align-start
@@ -148,6 +151,8 @@
           align-stretch
         </v-card>
       </v-card>
+
+      <h4>flex对齐</h4>
       <span>flex与自身对齐 class="align-self-baseline"</span>
       <template>
         <v-card class="d-flex" v-for="j in justify" :key="j" height="100">
@@ -164,7 +169,8 @@
       </template>
     </template>
     <template>
-      <span>自动边距 class="mr-auto"</span>
+      <h4>自动边距</h4>
+      <span>修改项目 margin和padding 设置 class="mr-auto"</span>
       <v-card class="d-flex" height="100">
         <v-card
           outlined
@@ -193,9 +199,71 @@
           class="pa-1 ma-1"
           v-for="n in 3"
           :key="n"
-          :class="[n === 3 ? 'mt-auto ml-auto red lighten-2' : 'orange lighten-3 ']"
+          :class="[
+            n === 3 ? 'mt-auto ml-auto red lighten-2' : 'orange lighten-3 ',
+          ]"
           >{{ n === 3 ? "mt-auto ml-auto red lighten-2" : "flex元素" }}</v-card
         >
+      </v-card>
+    </template>
+
+    <template>
+      <h4>flex 堆叠</h4>
+      <p>修改容器 堆叠方式</p>
+      <p>.flex-nowrap 默认不堆叠，文字挤不下会超出</p>
+      <v-card class="d-flex flex-nowrap pink accent-1" height="100" width="100">
+        <v-card class="pa-1 ma-2 amber darken-1" v-for="n in 5" :key="n"
+          >第{{ n }}flex项目个</v-card
+        >
+      </v-card>
+      <p>.flex-wrap 没指定flex容器的高宽，自动换行</p>
+      <v-card class="d-flex flex-wrap pink accent-1">
+        <v-card class="pa-1 ma-2 amber darken-1" v-for="n in 22" :key="n"
+          >第{{ n }}个flex项目</v-card
+        >
+      </v-card>
+      <p>.flex-wrap-reverse</p>
+      <v-card class="d-flex flex-wrap-reverse pink accent-1">
+        <v-card class="pa-1 ma-2 amber darken-1" v-for="n in 22" :key="n"
+          >第{{ n }}个flex项目</v-card
+        >
+      </v-card>
+    </template>
+
+    <template>
+      <h4>flex 排序</h4>
+      <p>修改项目 class="order-1"</p>
+      <v-card class="d-flex flex-wrap teal lighten-4">
+        <v-card
+          class="pa-1 ma-2 green accent-2"
+          v-for="n in 13"
+          :key="n"
+          :class="n === 2 ? 'order-frist' : `order-${n}`"
+        >
+          {{ n === 2 ? "我是第二个,我是order-frist,我要跑到第一个去了!" : "" }}
+          第{{ n }}个flex项目
+          {{
+            n === 13
+              ? "默认12个order-1 ~ order-12，第13个 order-13 开始好像有问题"
+              : ""
+          }}
+        </v-card>
+      </v-card>
+    </template>
+
+    <template>
+      <h4>flex 内容对齐</h4>
+      <p>
+        修改容器 class="align-content-[start|end|center|between|around|stretch]"
+        默认start
+      </p>
+      <v-card
+        class="d-flex flex-wrap align-content-center teal lighten-4"
+        height="200"
+      >
+        <v-card class="pa-1 ma-2 green accent-2" v-for="n in 13" :key="n">
+          第{{ n }}个flex项目
+        </v-card>
       </v-card>
     </template>
 
@@ -214,7 +282,7 @@
     </p>
     <p>
       <a
-        href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-backgrounds"
+        href="https://vuetifyjs.com/zh-Hans/styles/flex/#section-542f7528-flexbox"
         >Vuetify 弹性布局</a
       >
     </p>

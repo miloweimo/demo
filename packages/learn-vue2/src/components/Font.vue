@@ -35,6 +35,14 @@
     <p class="text-button">class="text-button"</p>
     <p class="text-caption">class="text-caption"</p>
     <p class="text-overline">class="text-overline"</p>
+
+    <h3>参考</h3>
+    <p>
+      <a
+        href="https://vuetifyjs.com/zh-Hans/styles/colors/#material-82725f698868"
+        >Material 色彩表</a
+      >
+    </p>
   </div>
 </template>
 
