@@ -6,6 +6,14 @@
     <p>然后。。。</p>
     <p>然后。。。</p>
     <p>然后。。。</p>
+    <p>
+      功能指南
+      <a
+        href=" https://vuetifyjs.com/zh-Hans/introduction/why-vuetify/#section-529f80fd63075357"
+      >
+        https://vuetifyjs.com/zh-Hans/introduction/why-vuetify/#section-529f80fd63075357</a
+      >
+    </p>
     <p>就好了</p>
   </div>
 </template>
