@@ -168,6 +168,40 @@
           <div class="items">grids item</div>
         </div>
       </template>
+
+      <template>
+        <h4>c. row-gap</h4>
+        <h4>column-gap</h4>
+        <h4>gap</h4>
+
+        <VueCodeHighlight
+          >style="row-gap:20px;column-gap:20px;"</VueCodeHighlight
+        >
+        <p>设置行距 列距</p>
+        <div
+          style="row-gap:20px;column-gap:20px;grid-template-columns:100px 100px 100px;"
+          class="grid"
+        >
+          <div class="item">grids item</div>
+          <div class="item">grids item</div>
+          <div class="item">grids item</div>
+          <div class="item">grids item</div>
+          <div class="item">grids item</div>
+        </div>
+
+        <VueCodeHighlight>style="gap:20px;"</VueCodeHighlight>
+        <p>简写</p>
+        <div
+          style="gap:20px;grid-template-columns:100px 100px 100px;"
+          class="grid"
+        >
+          <div class="item">grids item</div>
+          <div class="item">grids item</div>
+          <div class="item">grids item</div>
+          <div class="item">grids item</div>
+          <div class="item">grids item</div>
+        </div>
+      </template>
     </template>
 
     <h3>参考</h3>
@@ -220,5 +254,18 @@ export default {
   padding: 0.5rem;
   border-radius: 1rem;
   text-align: center;
+}
+
+.grid {
+  display: grid;
+  outline: #5bc703 solid;
+  border-radius: 0.5rem;
+  width: 360px;
+  padding: 0.5rem;
+}
+
+.item {
+  outline: #f38911 solid;
+  border-radius: 0.5rem;
 }
 </style>
