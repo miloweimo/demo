@@ -1,82 +1,119 @@
 <template>
   <div>
     <h1 class="text--subtitle-1 grey--text">Grids</h1>
-    <a href="https://vuetifyjs.com/zh-Hans/features/breakpoints/"
-      >https://vuetifyjs.com/zh-Hans/features/breakpoints/</a
-    ><br />
-    <h2 class="text--subtitle-1 grey--text">网格系统</h2>
-    <hr />
-    <h3>
-      如何定义flex布局 flex style list
-    </h3>
-    <div class="container">
-      <div>
-        1. 首先创建一个flex布局 <br />
-        <VueCodeHighlight language="css">
-          <pre>
-.container {
-  /* 1. 首先创建一个flex布局 */
-  display: flex;
-}
-</pre
-          >
-        </VueCodeHighlight>
-      </div>
-      <div>
-        2. 选择一个flow direction 默认 row <br />
-        <VueCodeHighlight language="css">
-          <pre>
-.container {
-  flex-direction: row | row-reverse | column | column-reverse;
-}
-</pre
-          >
-        </VueCodeHighlight>
-        <img
-          src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg"
-          alt="flex-direction flex方向"
-        />
-      </div>
-      <div>
-        3. 然后定义如何分布剩余空间 <br />
-        <img
-          src="https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg"
-          alt="align-content 对齐内容"
-          style="height: 300px;"
-        />
-      </div>
-    </div>
-    <br />
-    <span>效果：</span>
-    <ul class="flex-container">
-      <li class="flex-item">1</li>
-      <li class="flex-item">2</li>
-      <li class="flex-item">3</li>
-      <li class="flex-item">4</li>
-      <li class="flex-item">5</li>
-      <li class="flex-item">6</li>
-    </ul>
-    <hr />
-    <a href="https://vuetifyjs.com/zh-Hans/components/grids/#v-spacer"
-      ><span
-        >vuetify 的flex布局
-        https://vuetifyjs.com/zh-Hans/components/grids/#v-spacer</span
-      ></a
-    >
+    <h2 class="text--subtitle-2 black--text">网格系统</h2>
 
-    <p>v-container 里面来定义内容居中和水平填充内容</p>
     <template>
-      <v-container class="grey lighten-5">
-        <div>
-          vdnsjvj 11
+      <h3>
+        0. 使用css创建grids系统
+      </h3>
+      <template>
+        <h4>a. dispaly 属性</h4>
+        <p>
+          首先有一个grids container容器 里面都是grids items项目。例如下面的
+          <VueCodeHighlight>div</VueCodeHighlight>
+          作为容器，有css属性：
+        </p>
+        <VueCodeHighlight>.grids { display: grid;}</VueCodeHighlight>
+        <hr />
+        <span>foo</span>
+        <div class="grids">
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
         </div>
-        <div>
-          vdshv d 222
+        <span>bar</span>
+
+        <VueCodeHighlight>.grids { display: inline-grid;}</VueCodeHighlight>
+        <hr />
+        <span>foo</span>
+        <div class="inline-grids">
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
         </div>
-        <div>
-          vdshv 333
+        <span>bar</span>
+      </template>
+      <template>
+        <h4>b. grid-template-columns</h4>
+        <h4>grid-template-rows</h4>
+        <p>定义列的基本语法 grid-template-columns: ... ...;</p>
+        <VueCodeHighlight
+          >style="grid-template-columns:100px 100px 100px
+          200px;"</VueCodeHighlight
+        >
+        <div
+          style="grid-template-columns:100px 100px 100px 200px;"
+          class="grids"
+        >
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
         </div>
-      </v-container>
+        <h5>
+          i.
+          repeat()接受两个参数，第一个参数是重复的次数，第二个参数是所要重复的值
+        </h5>
+        <VueCodeHighlight
+          >style="grid-template-columns:repeat(4,25%);"</VueCodeHighlight
+        >
+        <div style="grid-template-columns:repeat(4,25%);" class="grids">
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+        </div>
+        <VueCodeHighlight
+          >style="grid-template-columns:repeat(4,1fr);"</VueCodeHighlight
+        >
+        <p>fr 不会超 ✌</p>
+        <div style="grid-template-columns:repeat(4,1fr);" class="grids">
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+        </div>
+
+        <h5>
+          ii.单元格的大小是固定的，但是容器的大小不确定.
+          每列宽度100px，然后自动填充，直到容器不能放置更多的列
+        </h5>
+        <VueCodeHighlight
+          >style="grid-template-columns:repeat(auto-fill,100px);width:400px;"</VueCodeHighlight
+        >
+        <div
+          style="grid-template-columns:repeat(auto-fill,100px);width:400px;"
+          class="grids"
+        >
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+        </div>
+
+        <h5>
+          iii. fr 关键字 为了方便表示比例关系，网格布局提供了fr关键字（fraction
+          的缩写，意为"片段"）
+        </h5>
+        <VueCodeHighlight
+          >style="grid-template-columns:100px 1.5fr 3fr;width:400px;"</VueCodeHighlight
+        >
+        <p>第一列的宽度为100像素，第二列的宽度是第三列的一半</p>
+        <div
+          style="grid-template-columns:100px 1.5fr 3fr;width:400px;"
+          class="grids"
+        >
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+        </div>
+      </template>
     </template>
   </div>
 </template>
@@ -93,31 +130,27 @@ export default {
 </script>
 
 <style>
-.flex-container,
-.container {
-  /* 1. 首先创建一个flex布局 */
-  display: flex;
-
-  /* 2. 选择一个flow direction 默认 row
-    flex-direction: row | row-reverse | column | column-reverse;
-  */
-  flex-direction: row;
-  /* 3. 然后定义如何分布剩余空间
-    align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
-  */
-  justify-content: center;
-
-  list-style: none;
+.grids {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  outline: #b16e9d solid;
+  border-radius: 0.5rem;
+}
+.inline-grids {
+  display: inline-grid;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  outline: #b16e9d solid;
+  border-radius: 0.5rem;
 }
 
-.flex-item {
-  background: tomato;
-  width: 100px;
-  height: 61.8px;
-  margin: 5px;
-  line-height: 61.8px;
-  color: white;
-  font-weight: bold;
+.items {
+  background: #ede7f6;
+  padding: 0.5rem;
+  border-radius: 1rem;
   text-align: center;
 }
 </style>
