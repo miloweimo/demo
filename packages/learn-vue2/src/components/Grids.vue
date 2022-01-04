@@ -100,7 +100,8 @@
           的缩写，意为"片段"）
         </h5>
         <VueCodeHighlight
-          >style="grid-template-columns:100px 1.5fr 3fr;width:400px;"</VueCodeHighlight
+          >style="grid-template-columns:100px 1.5fr
+          3fr;width:400px;"</VueCodeHighlight
         >
         <p>第一列的宽度为100像素，第二列的宽度是第三列的一半</p>
         <div
@@ -113,8 +114,75 @@
           <div class="items">grids item</div>
           <div class="items">grids item</div>
         </div>
+
+        <h5>
+          iv. minmax()
+          函数产生一个长度范围，表示长度就在这个范围之中。它接受两个参数，分别为最小值和最大值。
+        </h5>
+        <VueCodeHighlight
+          >style="grid-template-columns:1fr 1fr
+          minmax(100px,1fr);width:500px;"</VueCodeHighlight
+        >
+        <div
+          style="grid-template-columns:1fr 1fr minmax(100px,1fr);width:500px;"
+          class="grids"
+        >
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+        </div>
+
+        <h5>v. auto关键字表示由浏览器自己决定长度</h5>
+        <VueCodeHighlight
+          >style="grid-template-columns:100px auto 100px;"</VueCodeHighlight
+        >
+        <div style="grid-template-columns:100px auto 100px;" class="grids">
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+        </div>
+
+        <h5>vi. 网格线的名称</h5>
+        <p>
+          grid-template-columns属性和grid-template-rows属性里面，还可以使用方括号，指定每一根网格线的名字，方便以后的引用。
+        </p>
+        <VueCodeHighlight
+          >style="grid-template-columns:[chuizhiwanggexian1] 100px
+          [chuizhiwanggexian2] auto [chuizhiwanggexian3] 100px
+          [chuizhiwanggexian4];"</VueCodeHighlight
+        >
+        <div
+          style="grid-template-columns:[chuizhiwanggexian1] 100px [chuizhiwanggexian2] auto [chuizhiwanggexian3] 100px [chuizhiwanggexian4];"
+          class="grids"
+        >
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+          <div class="items">grids item</div>
+        </div>
       </template>
     </template>
+
+    <h3>参考</h3>
+    <p>
+      <a
+        href="https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html"
+        >CSS Grid 网格布局教程</a
+      >
+    </p>
+    <p>
+      <a
+        href="https://css-tricks.com/snippets/css/complete-guide-grid/#grid-properties"
+        >A Complete Guide to Grid</a
+      >
+    </p>
   </div>
 </template>
 
