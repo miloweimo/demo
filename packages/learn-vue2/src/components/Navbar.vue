@@ -16,7 +16,7 @@
       </v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app class="pink lighten-2">
+    <v-navigation-drawer v-model="drawer" app class="pink lighten-4">
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">

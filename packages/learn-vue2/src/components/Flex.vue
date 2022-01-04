@@ -55,10 +55,11 @@
     <hr />
     <h3>1. 在vuetify中使用flex元素</h3>
     <template>
-      <!-- 这个是template,不用管我 -->
+      <h4>d-flex 使用flex</h4>
+      <p>class="d-flex pa-2"</p>
       <v-card class="d-flex pa-2">
-        <!-- 首先这一个flex容器，可以是任何元素，这是v-card；class使用 .d-flex 或者
-        .d-[xs|sm|md|lg|xl]-flex .d-inline-flex使用内联 -->
+        首先这一个flex容器，可以是任何元素，这是v-card；class使用 .d-flex 或者
+        .d-[xs|sm|md|lg|xl]-flex .d-inline-flex使用内联
         <div class="green pa-1 ma-1" outlined v-for="n in 3" :key="n">
           这里是一个div，是v-card的子元素
         </div>
@@ -69,6 +70,8 @@
     <hr />
     <h3>2. 定义flex主轴方向</h3>
     <template>
+      <h4>flex-row 横轴对齐</h4>
+      <p>class="d-flex flex-row ma-2"</p>
       <v-card
         class="d-flex flex-row ma-2"
         :color="$vuetify.theme.dark ? 'purple darken-4' : 'pink'"
@@ -77,6 +80,7 @@
           this is {{ n }}!!
         </v-card>
       </v-card>
+      <p>class="d-flex flex-column-reverse ma-2"</p>
       <v-card class="d-flex flex-column-reverse ma-2">
         <v-card
           v-for="n in 3"
@@ -92,7 +96,7 @@
     <br />
     <hr />
     <h3>3. 对齐排版</h3>
-    <h4>对齐:横轴对齐</h4>
+    <h4>justify -- 对齐:横轴对齐</h4>
     <span>默认修改x轴</span>
     <template>
       <v-card class="d-flex justify-start ma-2">
@@ -123,7 +127,7 @@
     </template>
 
     <template>
-      <h4>对齐:纵轴对齐</h4>
+      <h4>align -- 对齐:纵轴对齐</h4>
       <span>默认修改y轴项目</span>
       <v-card class="d-flex align-start ma-2" height="100">
         <v-card v-for="n in 3" :key="n" class="ma-2 pa-1 pink lighten-3">
@@ -152,7 +156,7 @@
         </v-card>
       </v-card>
 
-      <h4>flex对齐</h4>
+      <h4>align-self -- flex对齐</h4>
       <span>flex与自身对齐 class="align-self-baseline"</span>
       <template>
         <v-card class="d-flex" v-for="j in justify" :key="j" height="100">
@@ -169,7 +173,7 @@
       </template>
     </template>
     <template>
-      <h4>自动边距</h4>
+      <h4>pa ma pt pd pl pr -- 自动边距</h4>
       <span>修改项目 margin和padding 设置 class="mr-auto"</span>
       <v-card class="d-flex" height="100">
         <v-card
@@ -208,7 +212,7 @@
     </template>
 
     <template>
-      <h4>flex 堆叠</h4>
+      <h4>wrap -- flex 堆叠</h4>
       <p>修改容器 堆叠方式</p>
       <p>.flex-nowrap 默认不堆叠，文字挤不下会超出</p>
       <v-card class="d-flex flex-nowrap pink accent-1" height="100" width="100">
@@ -231,7 +235,7 @@
     </template>
 
     <template>
-      <h4>flex 排序</h4>
+      <h4>order -- flex 排序</h4>
       <p>修改项目 class="order-1"</p>
       <v-card class="d-flex flex-wrap teal lighten-4">
         <v-card
@@ -252,7 +256,7 @@
     </template>
 
     <template>
-      <h4>flex 内容对齐</h4>
+      <h4>align-content -- flex 内容对齐</h4>
       <p>
         修改容器 class="align-content-[start|end|center|between|around|stretch]"
         默认start
@@ -265,6 +269,32 @@
           第{{ n }}个flex项目
         </v-card>
       </v-card>
+    </template>
+
+    <template>
+      <h4>
+        grow,shrink -- Flex 增长系数和收缩系数
+      </h4>
+      <p>
+        通过添加 flex-{condition}-{value} 格式的辅助类来使用. condition 可以是
+        grow 或 shrink 两者之一, value可以是 0 或 1 两者之一.
+      </p>
+      <v-container>
+        <v-row class="red lighten-2 d-flex flex-nowrap outlined">
+          <v-col class="blue lighten-2 ma-2 flex-grow-0 flex-shrink-0" cols="2"
+            >hello col</v-col
+          >
+          <v-col
+            class="blue lighten-2 ma-2 flex-grow-1 flex-shrink-0"
+            style="min-width: 100px; max-width: 100%;"
+            cols="3"
+            >hello col max-width: 100%</v-col
+          >
+          <v-col class="blue lighten-2 ma-2 flex-grow-0 flex-shrink-1" cols="5"
+            >hello col</v-col
+          >
+        </v-row>
+      </v-container>
     </template>
 
     <h3>参考</h3>
