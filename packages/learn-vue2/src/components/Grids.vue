@@ -5,8 +5,31 @@
 
     <template>
       <h3>
-        0. 使用css创建grids系统
+        0. 概述
       </h3>
+      <p>
+        Flex
+        布局是轴线布局，只能指定"项目"针对轴线的位置，可以看作是一维布局。Grid
+        布局则是将容器划分成"行"和"列"，产生单元格，然后指定"项目所在"的单元格，可以看作是二维布局。Grid
+        布局远比 Flex 布局强大。
+      </p>
+      <h3>1. 基本概念</h3>
+      <p>
+        参考 重要术语
+        <a
+          href="https://css-tricks.com/snippets/css/complete-guide-grid/#important-terminology"
+          >https://css-tricks.com/snippets/css/complete-guide-grid/#important-terminology</a
+        >
+      </p>
+      <p>
+        grid 基本概念
+        <a
+          href="https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html"
+          >https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html</a
+        >
+      </p>
+
+      <h3>2. 容器属性</h3>
       <template>
         <h4>a. dispaly 属性</h4>
         <p>
@@ -455,9 +478,114 @@
           grid-auto-rows、grid-auto-columns、grid-auto-flow这六个属性的合并简写形式
         </p>
       </template>
+
+      <template>
+        <h3>3. 项目属性</h3>
+        <template>
+          <h4>
+            grid-column-start 属性， grid-column-end 属性， grid-row-start
+            属性， grid-row-end 属性
+          </h4>
+          <p>
+            项目的位置是可以指定的，具体方法就是指定项目的四个边框，分别定位在哪根网格线。
+          </p>
+          <hr />
+          <VueCodeHighlight>
+            .item-1 { grid-column-start: 2; grid-column-end: 4;} .item-5 {
+            grid-column-start: 2; grid-column-end: 4;}
+          </VueCodeHighlight>
+          <div id="container">
+            <div
+              class="item item-1"
+              style="grid-column-start:2;grid-column-end:4;"
+            >
+              1
+            </div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div
+              class="item item-5"
+              style="grid-column-start:2;grid-column-end:4;"
+            >
+              5
+            </div>
+            <div class="item item-6">6</div>
+            <div class="item item-7">7</div>
+            <div class="item item-8">8</div>
+            <div class="item item-9">9</div>
+          </div>
+          <hr />
+          <p>
+            其他项目都没有指定位置，由浏览器自动布局，这时它们的位置由容器的grid-auto-flow属性决定
+          </p>
+          <p>
+            这四个属性的值，除了指定为第几个网格线，还可以指定为网格线的名字。
+          </p>
+          <hr />
+          <p>测试</p>
+          <div id="container">
+            <div
+              class="item item-1"
+              style="grid-column-start:2;grid-column-end:4;grid-row-start:2;grid-row-end:4;"
+            >
+              1
+            </div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">
+              5
+            </div>
+            <div class="item item-6">6</div>
+            <div class="item item-7">7</div>
+            <div class="item item-8">8</div>
+            <div class="item item-9">9</div>
+          </div>
+          <hr />
+        </template>
+
+        <template>
+          <h4>
+            grid-column 属性， grid-row 属性
+          </h4>
+          <p>
+            grid-column属性是grid-column-start和grid-column-end的合并简写形式，grid-row属性是grid-row-start属性和grid-row-end的合并简写形式。
+          </p>
+          <p>
+            grid-column: 1 / 3; ==> grid-column-start: 1; grid-column-end: 3;
+          </p>
+        </template>
+
+        <template
+          ><h4>grid-area 属性</h4>
+          <p>grid-area属性指定项目放在哪一个区域。</p>
+          <p>grid-area: e;</p>
+          <p>
+            grid-area属性还可用作grid-row-start、grid-column-start、grid-row-end、grid-column-end的合并简写形式，直接指定项目的位置。
+          </p>
+          <p>grid-area: 1 / 1 / 3 / 3;</p>
+        </template>
+
+        <template>
+          <h4>
+            justify-self 属性， align-self 属性， place-self 属性
+          </h4>
+          <p>
+            justify-self属性设置单元格内容的水平位置（左中右），跟justify-items属性的用法完全一致，但只作用于单个项目。
+          </p>
+          <p>
+            align-self属性设置单元格内容的垂直位置（上中下），跟align-items属性的用法完全一致，也是只作用于单个项目。
+          </p>
+          <p>
+            place-self属性是align-self属性和justify-self属性的合并简写形式。
+          </p>
+          <p>place-self: align-self justify-self;</p>
+        </template>
+      </template>
     </template>
 
-    <h3>参考</h3>
+    <h3>4. 参考</h3>
     <p>
       <a
         href="https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html"
