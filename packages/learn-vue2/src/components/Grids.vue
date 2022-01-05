@@ -202,6 +202,150 @@
           <div class="item">grids item</div>
         </div>
       </template>
+
+      <template>
+        <h4>d. grid-template-areas 属性</h4>
+        <VueCodeHighlight>
+          <pre>
+          style="display: grid;
+          grid-template-columns:100px 100px 100px;
+          grid-template-rows:100px 100px 100px;
+          grid-template-areas:'a b c'
+                              'd e f'
+                              'g h i';"</pre
+          ></VueCodeHighlight
+        >
+        <p>
+          先划分出9个单元格，然后将其定名为a到i的九个区域，分别对应这九个单元格
+        </p>
+        <VueCodeHighlight>
+          <pre>
+          style="display: grid;
+          grid-template-columns:100px 100px 100px;
+          grid-template-rows:100px 100px 100px;
+          grid-template-areas:'a a a'
+                              'b b b'
+                              'c c .';"</pre
+          ></VueCodeHighlight
+        >
+        <p>将9个单元格分成a、b、c三个区域</p>
+        <p>如果某些区域不需要利用，则使用"点"（.）表示。</p>
+        <p>
+          注意，区域的命名会影响到网格线。每个区域的起始网格线，会自动命名为区域名-start，终止网格线自动命名为区域名-end。
+        </p>
+        <p>
+          比如，区域名为header，则起始位置的水平网格线和垂直网格线叫做header-start，终止位置的水平网格线和垂直网格线叫做header-end。
+        </p>
+      </template>
+
+      <template>
+        <h4>e. grid-auto-flow 属性</h4>
+        <p>grid-auto-flow: {row|column|row dense|column dense};</p>
+        <VueCodeHighlight
+          ><pre>
+#container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-auto-flow: row;
+}</pre
+          ></VueCodeHighlight
+        >
+
+        <div id="container">
+          <div class="item item-1">
+            1
+          </div>
+          <div class="item item-2">
+            2
+          </div>
+          <div class="item item-3">3</div>
+          <div class="item item-4">4</div>
+          <div class="item item-5">5</div>
+          <div class="item item-6">6</div>
+          <div class="item item-7">7</div>
+          <div class="item item-8">8</div>
+          <div class="item item-9">9</div>
+        </div>
+        <p>1 2：</p>
+        <VueCodeHighlight
+          >style="grid-column-start: 1; grid-column-end: 3;"</VueCodeHighlight
+        >
+        <div id="container">
+          <div
+            class="item item-1"
+            style="grid-column-start: 1; grid-column-end: 3;"
+          >
+            1
+          </div>
+          <div
+            class="item item-2"
+            style="grid-column-start: 1; grid-column-end: 3;"
+          >
+            2
+          </div>
+          <div class="item item-3">3</div>
+          <div class="item item-4">4</div>
+          <div class="item item-5">5</div>
+          <div class="item item-6">6</div>
+          <div class="item item-7">7</div>
+          <div class="item item-8">8</div>
+          <div class="item item-9">9</div>
+        </div>
+
+        <VueCodeHighlight
+          ><pre>
+#container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-auto-flow: column;
+}</pre
+          ></VueCodeHighlight
+        >
+
+        <div id="container" style="grid-auto-flow: column;">
+          <div class="item item-1">
+            1
+          </div>
+          <div class="item item-2">
+            2
+          </div>
+          <div class="item item-3">3</div>
+          <div class="item item-4">4</div>
+          <div class="item item-5">5</div>
+          <div class="item item-6">6</div>
+          <div class="item item-7">7</div>
+          <div class="item item-8">8</div>
+          <div class="item item-9">9</div>
+        </div>
+        <p>1 2：</p>
+        <VueCodeHighlight
+          >style="grid-column-start: 1; grid-column-end: 3;"</VueCodeHighlight
+        >
+        <div id="container" style="grid-auto-flow: column;">
+          <div
+            class="item item-1"
+            style="grid-column-start: 1; grid-column-end: 3;"
+          >
+            1
+          </div>
+          <div
+            class="item item-2"
+            style="grid-column-start: 1; grid-column-end: 3;"
+          >
+            2
+          </div>
+          <div class="item item-3">3</div>
+          <div class="item item-4">4</div>
+          <div class="item item-5">5</div>
+          <div class="item item-6">6</div>
+          <div class="item item-7">7</div>
+          <div class="item item-8">8</div>
+          <div class="item item-9">9</div>
+        </div>
+        <p>上图会先填满第一列，再填满第2列，所以3号项目在第一列，4号项目在第二列。8号项目和9号项目被挤到了第四列。</p>
+      </template>
     </template>
 
     <h3>参考</h3>
@@ -252,7 +396,6 @@ export default {
 .items {
   background: #ede7f6;
   padding: 0.5rem;
-  border-radius: 1rem;
   text-align: center;
 }
 
@@ -264,8 +407,57 @@ export default {
   padding: 0.5rem;
 }
 
+#container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-auto-flow: row;
+}
+
 .item {
-  outline: #f38911 solid;
-  border-radius: 0.5rem;
+  /* border: 1px solid #e5e4e9; */
+  outline: #f5e7f1 solid 2px;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.item-1 {
+  background-color: #ef342a;
+  /* grid-column-start: 1; */
+  /* grid-column-end: 3;   */
+}
+
+.item-2 {
+  background-color: #f68f26;
+  /* grid-column-start: 1; */
+  /* grid-column-end: 3;  */
+}
+
+.item-3 {
+  background-color: #4ba946;
+}
+
+.item-4 {
+  background-color: #0376c2;
+}
+
+.item-5 {
+  background-color: #c077af;
+}
+
+.item-6 {
+  background-color: #f8d29d;
+}
+
+.item-7 {
+  background-color: #b5a87f;
+}
+
+.item-8 {
+  background-color: #d0e4a9;
+}
+
+.item-9 {
+  background-color: #4dc7ec;
 }
 </style>
