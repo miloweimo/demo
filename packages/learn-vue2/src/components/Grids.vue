@@ -182,11 +182,11 @@
           style="row-gap:20px;column-gap:20px;grid-template-columns:100px 100px 100px;"
           class="grid"
         >
-          <div class="item">grids item</div>
-          <div class="item">grids item</div>
-          <div class="item">grids item</div>
-          <div class="item">grids item</div>
-          <div class="item">grids item</div>
+          <div class="my-item">grids item</div>
+          <div class="my-item">grids item</div>
+          <div class="my-item">grids item</div>
+          <div class="my-item">grids item</div>
+          <div class="my-item">grids item</div>
         </div>
 
         <VueCodeHighlight>style="gap:20px;"</VueCodeHighlight>
@@ -195,11 +195,11 @@
           style="gap:20px;grid-template-columns:100px 100px 100px;"
           class="grid"
         >
-          <div class="item">grids item</div>
-          <div class="item">grids item</div>
-          <div class="item">grids item</div>
-          <div class="item">grids item</div>
-          <div class="item">grids item</div>
+          <div class="my-item">grids item</div>
+          <div class="my-item">grids item</div>
+          <div class="my-item">grids item</div>
+          <div class="my-item">grids item</div>
+          <div class="my-item">grids item</div>
         </div>
       </template>
 
@@ -397,6 +397,11 @@ export default {
   background: #ede7f6;
   padding: 0.5rem;
   text-align: center;
+}
+
+.my-item {
+  outline: #f38911 solid;
+  border-radius: 0.5rem;
 }
 
 .grid {
