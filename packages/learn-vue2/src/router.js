@@ -7,6 +7,7 @@ import About from './components/About.vue'
 import Grids from './components/Grids.vue'
 import Flex from './components/Flex.vue'
 import Layout from './components/Layout.vue'
+import Highchart from './components/Highchart.vue'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/layout',
       name: 'layout',
       component: Layout
+    },
+    {
+      path: '/highchart',
+      name: 'highchart',
+      component: Highchart
     },
   ]
 })
