@@ -53,7 +53,7 @@ export default {
       // this.$refs.chart1.width = (this.d1.styles.width || 800) + "px";
       // this.$refs.chart1.height = (this.d1.styles.height || 400) + "px";
       // 1. 绑定 图表的第一种方式 #id
-      // this.chart = new Highcharts.Chart('diagram1', this.d1.options);
+      this.chart = new Highcharts.Chart("diagram1", this.d1.options);
       // 1.1使用 document.getElementById('container')
       // this.chart = new Highcharts.Chart(document.getElementById('diagram1'), this.d1.options);
       // 1.2.
@@ -87,7 +87,32 @@ export default {
       d1: {
         options: {
           chart: {
-            type: "line", //指定图表的类型，默认是折线图（line）
+            // https://api.highcharts.com.cn/highcharts/series.html
+            type: "columnpyramid", //指定图表的类型，默认是折线图（line） area,arearange,areaspline,areasplinerange,bar,bellcurve,boxplot,bubble,bullet,column,columnpyramid,columnrange,cylinder,dependencywheel,dumbbell,errorbar,funnel,funnel3d,gauge,heatmap,histogram,item,line,lollipop,networkgraph,organization,packedbubble,pareto,pie,polygon,pyramid,pyramid3d,sankey,scatter,scatter3d,solidgauge,spline,streamgraph,sunburst,tilemap,timeline,treemap,variablepie,variwide,vector,venn,waterfall,windbarb,wordcloud,xrange
+            backgroundColor: "#eefdec",
+            borderColor: "#EBBA95",
+            borderWidth: 5,
+            borderRadius: 30,
+            // margin: [0, 0, 0, 0], // 外边距 改了轴线看不到了。。
+            spacing: [50, 100, 10, 10], // 内边距
+            // 其他样式：
+            style: {
+              fontFamily: "serif",
+              fontSize: "15px",
+              fontWeight: "bold",
+            },
+            colors: [
+              "#ff8f3a",
+              "#0d233a",
+              "#8bbc21",
+              "#910000",
+              "#1aadce",
+              "#492970",
+              "#f28f43",
+              "#77a1e5",
+              "#c42525",
+              "#a6c96a",
+            ],
           },
           title: {
             text: "", // 标题
@@ -133,6 +158,6 @@ export default {
 .diagram-style {
   margin-top: 10px;
   margin-bottom: 10px;
-  outline: solid;
+  outline: #ff6935 solid;
 }
 </style>
