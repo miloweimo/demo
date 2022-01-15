@@ -8,7 +8,12 @@
 
     <h2>haha wode</h2>
     <span class="text--subtitle-1 grey--text">年轻人的第一个🤮表</span>
-    <div class="highcharts-container diagram-style" ref="chart1">
+    <div
+      id="diagram1"
+      class="highcharts-container diagram-style"
+      ref="chart1"
+      style="min-width:400px;height:400px;"
+    >
       我是一个highchart容器div
     </div>
 
@@ -39,23 +44,37 @@ export default {
   },
   methods: {
     initchart() {
-      console.log("初始化chart", this.$el);
+      console.log("初始化chart1", this.$el);
       // this.$el.style.width = (this.styles.width || 800) + "px";
       // this.$el.style.height = (this.styles.height || 400) + "px";
       // this.chart = new Highcharts.Chart(this.$el, this.options);
 
-      console.log("初始化chart refs", this.$refs.chart1);
-      this.$refs.chart1.width = (this.d1.styles.width || 800) + "px";
-      this.$refs.chart1.height = (this.d1.styles.height || 400) + "px";
-      this.chart = new Highcharts.Chart(this.$refs.chart1, this.d1.options);
+      console.log("初始化chart1 refs", this.$refs.chart1);
+      // this.$refs.chart1.width = (this.d1.styles.width || 800) + "px";
+      // this.$refs.chart1.height = (this.d1.styles.height || 400) + "px";
+      // 1. 绑定 图表的第一种方式 #id
+      // this.chart = new Highcharts.Chart('diagram1', this.d1.options);
+      // 1.1使用 document.getElementById('container')
+      // this.chart = new Highcharts.Chart(document.getElementById('diagram1'), this.d1.options);
+      // 1.2.
+      //使用 $refs 找到虚拟DOM
+      // this.chart = new Highcharts.Chart(this.$refs.chart1, this.d1.options);
+
+      // 2、或者通过 chart.renderTo 来指定
+      // this.d1.options.chart.renderTo = "diagram1";
+      // this.chart = new Highcharts.Chart(
+      //   // Highcharts 配置
+      //   this.d1.options
+      // );
+
       setTimeout(() => {
         this.d1.options.series[1].data[3] = 6;
         this.d1.options.series[1].data[4] = 6;
         this.d1.options.series[1].data[0] = Infinity;
         console.log(this.d1.options.series[1].data);
-        this.d1.options.series[1].name = '哈哈';
+        this.d1.options.series[1].name = "哈哈";
 
-        this.d1.options.yAxis.title.text = '喜欢评分（满分-∞）';
+        this.d1.options.yAxis.title.text = "喜欢评分（满分-∞）";
         this.chart = new Highcharts.Chart(this.$refs.chart1, this.d1.options);
       }, 2000);
     },
@@ -74,7 +93,14 @@ export default {
             text: "", // 标题
           },
           xAxis: {
-            categories: ["苹果", "香蕉", "橙子", "雪梨", "迷幻蘑菇",'太空辣鸡'], // x 轴分类
+            categories: [
+              "苹果",
+              "香蕉",
+              "橙子",
+              "雪梨",
+              "迷幻蘑菇",
+              "太空辣鸡",
+            ], // x 轴分类
           },
           yAxis: {
             title: {
@@ -85,7 +111,7 @@ export default {
             {
               // 数据列
               name: "小明", // 数据列名
-              data: [1, 0, 4,], // 数据
+              data: [1, 0, 4], // 数据
             },
             {
               name: "小红",
