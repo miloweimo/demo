@@ -1,15 +1,17 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import jsonServerService from '../services/jsonServer'
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     servertime: '',
-    auth: {}
+    auth: {},
+    notes: [],
   },
   mutations: {
-    setAuth(state,code){
+    setAuth(state, code) {
       state.auth = code
     },
     setServertime(state, ts) {
@@ -18,8 +20,17 @@ export default new Vuex.Store({
     addServertime(state, ms) {
       state.servertime = state.servertime + ms;
     },
+    [SET_NOTES](state, notes) {
+      state.notes = notes
+    },
   },
-  actions: {},
+  actions: {
+    async updateAllNotes(commit) {
+      const notes = await jsonServerService.getAllNotes()
+      commit('SET_NOTES', notes)
+    }
+
+  },
   getters: {},
   modules: {},
 });

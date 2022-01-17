@@ -13,3 +13,6 @@ get http://192.168.56.102/server/servertime
 # Content-Type: application/json
 # loginType:INFINITY
 sessionId:058BB5ED88F8988ED47463B30D569091.tomcat1
+
+### json-server
+get http://localhost:2333/notes

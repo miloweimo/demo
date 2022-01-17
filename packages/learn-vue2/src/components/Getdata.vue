@@ -3,6 +3,7 @@
     <h1>get data from server</h1>
     <h2>get data from json-server</h2>
     <v-btn>click me!</v-btn>
+    <v-btn @click="handleGetNotes">get notes</v-btn>
     <h2>get data from swx-server</h2>
     <v-btn>click me!</v-btn>
     <v-btn @click="handleLogin">login to server</v-btn>
@@ -27,12 +28,16 @@ export default {
       try {
         const res = await loginService.login({ identifier, password });
         console.log(res);
-        // update credent in store 
-        this.$store.commit('setAuth',res)
+        // update credent in store
+        this.$store.commit("setAuth", res);
       } catch (e) {
         console.log(e);
         throw new Error(e);
       }
+    },
+    async handleGetNotes() {
+      console.log('handleGetNotes');
+      
     },
   },
   mounted() {
