@@ -6,8 +6,12 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     servertime: '',
+    auth: {}
   },
   mutations: {
+    setAuth(state,code){
+      state.auth = code
+    },
     setServertime(state, ts) {
       state.servertime = ts;
     },

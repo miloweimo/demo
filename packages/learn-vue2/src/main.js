@@ -8,9 +8,12 @@ import router from './router'
 
 Vue.config.productionTip = false;
 Vue.use(router)
-new Vue({
+const vm = new Vue({
   router,
   store,
   vuetify,
   render: (h) => h(App),
-}).$mount("#app");
+})
+vm.$mount("#app");
+// console.log(vm);
+

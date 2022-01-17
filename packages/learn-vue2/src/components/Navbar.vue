@@ -66,6 +66,7 @@ export default {
         { title: "Layout", icon: "mdi-page-layout-body", linkto: "/layout" },
         { title: "Flex", icon: "mdi-animation", linkto: "/flex" },
         { title: "Grids", icon: "mdi-grid", linkto: "/grids" },
+        { title: "Getdata", icon: "mdi-connection", linkto: "/getdata" },
         { title: "Highchart", icon: "mdi-chart-areaspline", linkto: "/highchart" },
       ],
       right: null,

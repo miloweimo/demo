@@ -43,6 +43,12 @@
         >Material 色彩表</a
       >
     </p>
+    <p>
+      <a
+        href="https://pictogrammers.github.io/@mdi/font/6.5.95/"
+        >mdi 图标库</a
+      >
+    </p>
   </div>
 </template>
 

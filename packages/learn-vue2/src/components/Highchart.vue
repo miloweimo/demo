@@ -42,18 +42,18 @@ export default {
   name: "highchart",
   components: { HighchartTemplate },
   mounted() {
-    console.log("图表1的数据：", this.d1.options);
+    // console.log("图表1的数据：", this.d1.options);
     this.haha();
     this.initchart();
   },
   methods: {
     initchart() {
-      console.log("初始化chart1", this.$el);
+      // console.log("初始化chart1", this.$el);
       // this.$el.style.width = (this.styles.width || 800) + "px";
       // this.$el.style.height = (this.styles.height || 400) + "px";
       // this.chart = new Highcharts.Chart(this.$el, this.options);
 
-      console.log("初始化chart1 refs", this.$refs.chart1);
+      // console.log("初始化chart1 refs", this.$refs.chart1);
       // this.$refs.chart1.width = (this.d1.styles.width || 800) + "px";
       // this.$refs.chart1.height = (this.d1.styles.height || 400) + "px";
       // 1. 绑定 图表的第一种方式 #id
@@ -75,7 +75,7 @@ export default {
         this.d1.options.series[1].data[3] = 6;
         this.d1.options.series[1].data[4] = 6;
         this.d1.options.series[1].data[0] = Infinity;
-        console.log(this.d1.options.series[1].data);
+        // console.log(this.d1.options.series[1].data);
         this.d1.options.series[1].name = "哈哈";
 
         this.d1.options.yAxis.title.text = "喜欢评分（满分-∞）";
@@ -83,7 +83,7 @@ export default {
       }, 2000);
     },
     haha() {
-      console.log("haha");
+      // console.log("haha");
     },
   },
   data() {
