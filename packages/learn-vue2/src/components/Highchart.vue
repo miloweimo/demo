@@ -7,7 +7,7 @@
     >
 
     <h2>haha wode</h2>
-    <span class="text--subtitle-1 grey--text">年轻人的第一个🤮表</span>
+    <span class="text--subtitle-1 grey--text">年轻人</span>
     <div
       id="diagram1"
       class="highcharts-container diagram-style"
