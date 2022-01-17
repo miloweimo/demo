@@ -18,7 +18,9 @@
     </div>
 
     <hr />
-
+    <HighchartTemplate :options="this.d1.options" :styles="this.d1.styles"
+      >heeee</HighchartTemplate
+    >
     <h2>参考</h2>
     <p>
       <a href="https://www.highcharts.com.cn/docs">Highcharts 文档</a>
@@ -31,12 +33,14 @@ import Highcharts from "highcharts/highstock";
 import HighchartsMore from "highcharts/highcharts-more";
 import HighchartsDrilldown from "highcharts/modules/drilldown";
 import Highcharts3D from "highcharts/highcharts-3d";
+import HighchartTemplate from "./HighchartTemplate";
 HighchartsMore(Highcharts);
 HighchartsDrilldown(Highcharts);
 Highcharts3D(Highcharts);
 
 export default {
   name: "highchart",
+  components: { HighchartTemplate },
   mounted() {
     console.log("图表1的数据：", this.d1.options);
     this.haha();
@@ -88,7 +92,7 @@ export default {
         options: {
           chart: {
             // https://api.highcharts.com.cn/highcharts/series.html
-            type: "columnpyramid", //指定图表的类型，默认是折线图（line） area,arearange,areaspline,areasplinerange,bar,bellcurve,boxplot,bubble,bullet,column,columnpyramid,columnrange,cylinder,dependencywheel,dumbbell,errorbar,funnel,funnel3d,gauge,heatmap,histogram,item,line,lollipop,networkgraph,organization,packedbubble,pareto,pie,polygon,pyramid,pyramid3d,sankey,scatter,scatter3d,solidgauge,spline,streamgraph,sunburst,tilemap,timeline,treemap,variablepie,variwide,vector,venn,waterfall,windbarb,wordcloud,xrange
+            type: "bar", //指定图表的类型，默认是折线图（line） area,arearange,areaspline,areasplinerange,bar,bellcurve,boxplot,bubble,bullet,column,columnpyramid,columnrange,cylinder,dependencywheel,dumbbell,errorbar,funnel,funnel3d,gauge,heatmap,histogram,item,line,lollipop,networkgraph,organization,packedbubble,pareto,pie,polygon,pyramid,pyramid3d,sankey,scatter,scatter3d,solidgauge,spline,streamgraph,sunburst,tilemap,timeline,treemap,variablepie,variwide,vector,venn,waterfall,windbarb,wordcloud,xrange
             backgroundColor: "#eefdec",
             borderColor: "#EBBA95",
             borderWidth: 5,
