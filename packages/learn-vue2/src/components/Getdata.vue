@@ -29,7 +29,7 @@ export default {
         const res = await loginService.login({ identifier, password });
         console.log(res);
         // update credent in store
-        this.$store.commit("setAuth", res);
+        this.$store.commit("SET_AUTH", res);
       } catch (e) {
         console.log(e);
         throw new Error(e);
@@ -37,11 +37,11 @@ export default {
     },
     async handleGetNotes() {
       console.log('handleGetNotes');
-      
+      this.$store.dispatch('updateAllNotes')
     },
   },
   mounted() {
-    const promise = axios.get("http://localhost:3001/notes");
+    const promise = axios.get("http://localhost:2333/notes");
     console.log(promise);
     // const promise2 = axios.get("http://localhost:3001/foobar");
     // console.log(promise2);

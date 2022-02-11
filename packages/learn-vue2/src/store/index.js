@@ -11,7 +11,7 @@ export default new Vuex.Store({
     notes: [],
   },
   mutations: {
-    setAuth(state, code) {
+    SET_AUTH(state, code) {
       state.auth = code
     },
     setServertime(state, ts) {
@@ -20,14 +20,17 @@ export default new Vuex.Store({
     addServertime(state, ms) {
       state.servertime = state.servertime + ms;
     },
-    [SET_NOTES](state, notes) {
+    SET_NOTES(state, notes) {
       state.notes = notes
     },
   },
   actions: {
-    async updateAllNotes(commit) {
+    async updateAllNotes() {
+      console.log('actions:updateAllNotes');
       const notes = await jsonServerService.getAllNotes()
-      commit('SET_NOTES', notes)
+      console.log('notes:',notes);
+      
+      this.commit('SET_NOTES', notes)
     }
 
   },
