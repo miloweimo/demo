@@ -3,6 +3,7 @@
     <h1>Index Page</h1>
     test page
     <ComponentA />
+    some change
   </div>
 </template>
 
