@@ -1,32 +1,28 @@
 # learn-vue2
 
----
+测试vue2
 
-1. 组件
-2. 组件数据传递
-3. 服务端通信 axios
+## 项目预览
 
----
+![preview.png](./preview.png)
 
-## Project setup
-```
-npm install
-```
+## 启动项目
+  
+  ```bash
+  npm install
+  npm run dev
+  ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 新模块开发流程
 
-### Compiles and minifies for production
-```
-npm run build
-```
+1. 在`src/pages`目录下新建模块目录, 如`src/pages/test`
+2. 在`src/pages/test`目录下新建`index.vue`文件, 作为模块的入口文件
+3. 在`src/router/index.js`中添加路由配置, 如:
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+  ```javascript
+  {
+    path: '/test',
+    name: 'test',
+    component: resolve => require(['@/pages/test'], resolve)
+  }
+  ```
