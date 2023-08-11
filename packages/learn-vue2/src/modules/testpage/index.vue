@@ -3,7 +3,7 @@
     <h1>Index Page</h1>
     test page
     <ComponentA />
-    some change again
+    some change again again
   </div>
 </template>
 
