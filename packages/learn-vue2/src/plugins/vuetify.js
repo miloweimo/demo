@@ -15,7 +15,6 @@ const opts = {
   theme: {
     themes: {
       light:
-
       {
         primary: "#ffc107",
         secondary: "#607d8b",
