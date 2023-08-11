@@ -59,5 +59,11 @@ export default new Router({
       name: 'getdata',
       component: Getdata
     },
+    {
+      path: '/testpage',
+      name: 'testpage',
+      // component: () => import('./modules/testpage/IndexPage.vue')
+      component: resolve => require(['@/modules/testpage'], resolve)
+    },
   ]
 })
