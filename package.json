@@ -5,8 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:learn-vue2": "lerna run serve --scope @demo/learn-vue2",
-    "build:learn-vue2": "lerna run build --scope @demo/learn-vue2"
+    "dev:haha": "lerna run serve --scope @demo/haha",
+    "build:haha": "lerna run build --scope @demo/haha"
   },
   "dependencies": {},
   "devDependencies": {
