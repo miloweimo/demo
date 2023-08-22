@@ -7,7 +7,7 @@
   "scripts": {
     "dev:haha": "lerna run serve --scope @demo/haha",
     "build:haha": "lerna run build --scope @demo/haha",
-    "gh:haha": "npm run build:haha && cd packages/haha/dist/ && cp -r ./ ../../../docs&&git add .&& git comit -m '打包脚本'&&git push origin main"
+    "gh:haha": "npm run build:haha && cp -r ./packages/haha/dist docs/ && git add . && git commit -m '打包脚本' && git push origin main"
   },
   "dependencies": {},
   "devDependencies": {
