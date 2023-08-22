@@ -15,7 +15,8 @@
       </v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app class="pink lighten-4">
+    <v-navigation-drawer v-model="drawer" app dense class="pink lighten-4">
+
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6 d-flex align-center">
@@ -23,14 +24,14 @@
             <span class="pink--text lighten-2">我的</span>
             <v-icon color="pink">mdi-spin mdi-star</v-icon> 
             <v-spacer></v-spacer>
-            <v-btn dense icon small @click="drawer = !drawer">
+            <v-btn dense icon @click="drawer = !drawer">
               <v-icon color="pink">mdi-menu</v-icon>
             </v-btn>
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
-      <v-divider></v-divider>
+      <!-- <v-divider></v-divider> -->
 
       <v-list dense nav>
         <v-list-item
