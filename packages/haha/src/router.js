@@ -17,9 +17,9 @@ export default new Router({
       component: resolve => require(['@/modules/test'], resolve)
     },
     {
-      path: '/demo',
-      name: 'demo',
-      component: () => import('@/modules/demo')
+      path: '*',
+      name: '404',
+      component: () => import(/* webpackChunkName: "404" */ '@/views/404.vue'),
     },
   ]
 })
