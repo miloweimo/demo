@@ -12,9 +12,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/testpage',
-      name: 'testpage',
-      component: resolve => require(['@/modules/testpage'], resolve)
+      path: '/test',
+      name: 'test',
+      component: resolve => require(['@/modules/test'], resolve)
     },
   ]
 })
