@@ -6,7 +6,8 @@
   ],
   "scripts": {
     "dev:haha": "lerna run serve --scope @demo/haha",
-    "build:haha": "lerna run build --scope @demo/haha"
+    "build:haha": "lerna run build --scope @demo/haha",
+    "gh:haha": "npm run build:haha && cd packages/haha/dist/ && cp -r ./ ../../../docs"
   },
   "dependencies": {},
   "devDependencies": {
