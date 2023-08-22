@@ -16,5 +16,10 @@ export default new Router({
       name: 'test',
       component: resolve => require(['@/modules/test'], resolve)
     },
+    {
+      path: '/demo',
+      name: 'demo',
+      component: () => import('@/modules/demo')
+    },
   ]
 })
