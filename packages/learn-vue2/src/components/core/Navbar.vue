@@ -21,6 +21,7 @@
           <v-list-item-title class="text-h6 d-flex align-center">
             <span class="grey--text">哈哈</span>
             <span class="pink--text lighten-2">我的</span>
+            <v-icon color="pink">mdi-spin mdi-star</v-icon> 
             <v-spacer></v-spacer>
             <v-btn dense icon small @click="drawer = !drawer">
               <v-icon color="pink">mdi-menu</v-icon>
