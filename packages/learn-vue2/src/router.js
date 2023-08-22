@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Dashboard from './components/Dashboard.vue'
+import Home from './modules/home'
+// import Dashboard from './components/Dashboard.vue'
 import Hello from './components/Hello.vue'
 import Font from './components/Font.vue'
 import About from './components/About.vue'
@@ -16,8 +17,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'dashboard',
-      component: Dashboard
+      name: 'home',
+      component: Home
     },
     {
       path: '/hello',
