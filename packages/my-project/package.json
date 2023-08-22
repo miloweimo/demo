@@ -7,7 +7,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "dayjs": "^1.10.6"
+    "dayjs": "^1.11.9"
   },
   "author": "",
   "license": "ISC"
