@@ -7,7 +7,6 @@
       <v-spacer></v-spacer>
 
       <v-app-bar-nav-icon depressed @click="drawer = !drawer">
-        <!-- @keyup.ctrl.enter="console.log('anxia')" -->
         <v-icon color="pink">mdi-menu</v-icon>
       </v-app-bar-nav-icon>
 
@@ -19,9 +18,13 @@
     <v-navigation-drawer v-model="drawer" app class="pink lighten-4">
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="text-h6">
+          <v-list-item-title class="text-h6 d-flex align-center">
             <span class="grey--text">哈哈</span>
             <span class="pink--text lighten-2">我的</span>
+            <v-spacer></v-spacer>
+            <v-btn dense icon small @click="drawer = !drawer">
+              <v-icon color="pink">mdi-menu</v-icon>
+            </v-btn>
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
@@ -53,7 +56,7 @@ export default {
   name: "Navbar",
   data() {
     return {
-      drawer: true,
+      drawer: false,
       items: [
         { title: "Home", icon: "mdi-home-variant-outline", linkto: "/" },
         // { title: "About", icon: "mdi-spin mdi-star", linkto: "/about" },
@@ -71,9 +74,6 @@ export default {
   },
   methods: {
     handle(path) {
-      // console.log("new path", path);
-      // console.log("old path", this.$router.currentRoute.fullPath);
-
       if (path === this.$router.currentRoute.fullPath) return;
       this.$router.push({ path: path });
     },
