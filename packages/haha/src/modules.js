@@ -5,6 +5,7 @@ export const routerModules = {
   demo: require.context('./modules/demo', true, /\broutes\b\.js$/),
   // test: require.context('./modules/test', true, /\broutes\b\.js$/),
   modal: require.context('./modules/modal', true, /\broutes\b\.js$/),
+  comploop: require.context('./modules/comploop', true, /\broutes\b\.js$/),
 };
 
 export const storeModules = {
@@ -22,4 +23,5 @@ export const navModules = [
   // { title: "Demo", icon: "mdi-teddy-bear", linkto: "/demo" },
   // { title: "Test", icon: "mdi-test-tube", linkto: "/test" },
   { title: "Modal 模态弹窗", icon: "mdi-message-badge-outline", linkto: "/modal" },
+  { title: "组件循环依赖", icon: "mdi-sync", linkto: "/comploop" },
 ];
