@@ -3,8 +3,6 @@ import Router from 'vue-router'
 import Home from './views/HomeView.vue'
 import { routerModules } from '@/modules';
 
-console.log(routerModules);
-
 // 所有包含children的路由加hasChildren属性，所有子路由加rootRouterName属性
 const formatChildrenRouters = (item, rootname) => {
   if (item.children && item.children.length > 0) {
@@ -42,7 +40,6 @@ const loadRouterMessages = () => {
   });
   return routrMessages;
 };
-console.log(loadRouterMessages());
 
 Vue.use(Router)
 
