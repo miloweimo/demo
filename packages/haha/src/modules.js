@@ -19,7 +19,7 @@ export const localeModules = {
 
 export const navModules = [
   { title: "Home", icon: "mdi-home-variant-outline", linkto: "/" },
-  { title: "Demo", icon: "mdi-teddy-bear", linkto: "/demo" },
-  { title: "Test", icon: "mdi-test-tube", linkto: "/test" },
+  // { title: "Demo", icon: "mdi-teddy-bear", linkto: "/demo" },
+  // { title: "Test", icon: "mdi-test-tube", linkto: "/test" },
   { title: "Modal 模态弹窗", icon: "mdi-message-badge-outline", linkto: "/modal" },
 ];
