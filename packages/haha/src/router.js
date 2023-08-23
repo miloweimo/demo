@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from './views/HomeView.vue'
+import Home from './views/HomeView.vue'
 import { routerModules } from '@/modules';
 
 console.log(routerModules);
@@ -51,31 +51,12 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      // component: Home,
-      component: () => import('@/views/HomeView.vue'),
-      // component: () => import('@/modules/demo/index.vue'),
+      component: Home,
       children: loadRouterMessages(),
-      // children: [
-        // {
-        //   path: '',
-        //   name: 'Home',
-        //   component: () => import('@/views/HomeView.vue')
-        // },
-      //   {
-      //     path: 'demo',
-      //     name: 'demo',
-      //     component: () => import('@/modules/demo/index.vue')
-      //   },
-      // ],
       meta: {
         nomultipage: true,
       },
     },
-    // {
-    //   path: '/test',
-    //   name: 'test',
-    //   component: resolve => require(['@/modules/test'], resolve)
-    // },
     {
       path: '*',
       // redirect: '/', // 立即重定向
