@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>demo</h1>
-    msg: {{ msg }}
+    <div>msg: {{ msg }}</div>
+    <div>i18n: {{ this.$t('msg') }}</div>
+    <div>i18n demo: {{ this.$t('demo.msg') }}</div>
   </div>
 </template>
 
