@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>组件循环依赖问题</h1>
-    <p>互相依赖的组件都用import会导致组件注册问题</p>
+    <p>互相依赖的组件都用import会导致组件注册问题，是webpack读取顺序问题</p>
 <code>
 export default {
   beforeCreate () {
