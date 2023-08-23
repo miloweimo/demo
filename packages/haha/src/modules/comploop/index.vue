@@ -19,18 +19,17 @@ export default {
 </code>
       <A></A>
     <hr class="my-2">
-      <B></B>
   </div>
 </template>
 
 <script>
+import Ajs from'./A.js' // 1. webpack 去加载A.js
 import A from './components/A.vue'
-import B from './components/B.vue'
 
+console.log(Ajs); // 8. A.js 执行完毕
 export default {
   components: {
     A,
-    B,
   },
 }
 </script>
