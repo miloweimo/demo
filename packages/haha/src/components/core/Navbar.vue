@@ -54,6 +54,8 @@
 </template>
 
 <script>
+import { navModules } from "@/modules";
+
 export default {
   name: "Navbar",
   data() {
@@ -61,19 +63,12 @@ export default {
       drawer: false,
       items: [
         { title: "Home", icon: "mdi-home-variant-outline", linkto: "/" },
-        // { title: "About", icon: "mdi-spin mdi-star", linkto: "/about" },
-        // { title: "Hello", icon: "mdi-human-greeting-variant", linkto: "/hello" },
-        // { title: "Font", icon: "mdi-format-font", linkto: "/font" },
-        // { title: "Layout", icon: "mdi-page-layout-body", linkto: "/layout" },
-        // { title: "Flex", icon: "mdi-animation", linkto: "/flex" },
-        // { title: "Grids", icon: "mdi-grid", linkto: "/grids" },
-        // { title: "Getdata", icon: "mdi-connection", linkto: "/getdata" },
-        // { title: "Highchart", icon: "mdi-chart-areaspline", linkto: "/highchart" },
-        { title: "Demo", icon: "mdi-teddy-bear", linkto: "/demo" },
-        { title: "Test", icon: "mdi-test-tube", linkto: "/test" },
       ],
       right: null,
     };
+  },
+  created() {
+    this.items = navModules;
   },
   methods: {
     handle(path) {
