@@ -6,6 +6,9 @@
 
 <script>
 export default {
+  created() {
+    console.log('demo created')
+  }
 
 }
 </script>
