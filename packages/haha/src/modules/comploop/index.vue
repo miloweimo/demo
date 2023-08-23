@@ -18,7 +18,6 @@ export default {
 }
 </code>
       <A></A>
-    <hr class="my-2">
   </div>
 </template>
 
