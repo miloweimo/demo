@@ -10,8 +10,11 @@
         <v-icon color="pink">mdi-menu</v-icon>
       </v-app-bar-nav-icon>
 
-      <v-app-bar-nav-icon depressed>
-        <v-icon color="pink">mdi-exit-to-app</v-icon>
+      <v-app-bar-nav-icon depressed href="https://github.com/miloweimo">
+        <v-icon color="pink">mdi-github</v-icon>
+      </v-app-bar-nav-icon>
+      <v-app-bar-nav-icon depressed href="https://miloweimo.github.io/">
+        <v-icon color="pink">mdi-home</v-icon>
       </v-app-bar-nav-icon>
     </v-app-bar>
 
