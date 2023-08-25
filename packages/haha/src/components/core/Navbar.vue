@@ -63,7 +63,7 @@ export default {
   name: "Navbar",
   data() {
     return {
-      drawer: false,
+      drawer: true,
       items: [
         { title: "Home", icon: "mdi-home-variant-outline", linkto: "/" },
       ],
