@@ -8,6 +8,7 @@ export const routerModules = {
   comploop: require.context('./modules/comploop', true, /\broutes\b\.js$/),
   echarts: require.context('./modules/echarts', true, /\broutes\b\.js$/),
   debounce: require.context('./modules/debounce', true, /\broutes\b\.js$/),
+  throttle: require.context('./modules/throttle', true, /\broutes\b\.js$/),
 };
 
 // packages/haha/src/components/core/Navbar.vue
@@ -19,6 +20,7 @@ export const navModules = [
   { title: "组件循环依赖", icon: "mdi-sync", linkto: "/comploop" },
   { title: "echarts", icon: "mdi-chart-sankey", linkto: "/echarts" },
   { title: "debounce防抖", icon: "mdi-timer-check", linkto: "/debounce" },
+  { title: "throttle节流", icon: "mdi-timer-sand", linkto: "/throttle" },
 ];
 
 export const storeModules = {
