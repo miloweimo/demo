@@ -6,14 +6,22 @@
     </p>
     <v-btn @click="msg = '', count = 0">清空</v-btn>
     <v-btn @click="handleClick">不防抖</v-btn>
-    <v-btn @click="handleClick2">防抖 {{ delay }}ms</v-btn>
+    <v-btn @click="handleClick2">简单防抖 {{ delay }}ms</v-btn>
     <v-text-field
       dense
       outlined
       v-model="delay"
       type="number"
+      label="防抖时间ms"
       style="display: inline-block;width: max-content;"
     ></v-text-field>
+    <hr class="my-2" />
+    <p>_防抖函数 参考<a href="https://github.com/lodash/lodash/blob/4.17.15/lodash.js#L10304">lodash源码</a></p>
+    <p>使用注意一定要看 https://css-tricks.com/debouncing-throttling-explained-examples </p>
+    <v-btn @click="msg = '', count = 0">清空</v-btn>
+    <v-btn @click="handleClickH">_防抖函数 最后事件有效</v-btn>
+    <v-btn @click="cancelDebounce">立即取消运行中的防抖函数</v-btn>
+    <v-btn @click="execDebounce">立即执行运行中的防抖函数</v-btn>
     <hr class="my-2" />
     <div>
       输出：{{count}}<br />
@@ -23,6 +31,23 @@
 </template>
 
 <script>
+import _ from "lodash";
+
+let that = null;
+const handleClickH = _.debounce(function () {
+  console.log("防抖函数执行！");
+  that.msg += " 点";
+  that.count++;
+}, 500);
+const cancelDebounce = () => {
+  console.log("取消运行中的防抖函数");
+  handleClickH.cancel();
+};
+const execDebounce = () => {
+  console.log("立即执行运行中的防抖函数");
+  handleClickH.flush();
+};
+
 let timer = null;
 export default {
   data() {
@@ -30,16 +55,21 @@ export default {
       count: 0,
       msg: "",
       delay: 200,
+      handleClickH,
+      cancelDebounce,
+      execDebounce,
     };
   },
+  mounted() {
+    that = this;
+  },
   methods: {
-    debounce(fn, delay = 300) {
+    myDebounce(fn, delay = 0) {
+      console.log('防抖函数', fn, delay);
       return ( ...args ) => {
 
-        console.log(timer);
         if (timer) {
           clearTimeout(timer);
-          console.log("clear", timer);
         }
 
         timer = setTimeout(() => {
@@ -52,11 +82,24 @@ export default {
       this.count++;
     },
     handleClick2() {
-      this.debounce(() => {
+      this.myDebounce(() => {
         this.msg += " 点";
         this.count++;
       }, this.delay)();
     },
+    // // 不能多次调用debounce函数，否则会多次执行
+    // handleClickH: _.debounce(function () {
+    //   this.msg += " 点";
+    //   this.count++;
+    // }, 500),
+    // cancelDebounce() {
+    //   // 取消运行中的防抖函数
+    //   this.handleClickH.cancel();
+    // },
+    // execDebounce() {
+    //   // 立即执行运行中的防抖函数
+    //   this.handleClickH.flush();
+    // },
   },
 };
 </script>
