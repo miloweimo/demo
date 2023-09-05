@@ -1,14 +1,13 @@
 <template>
   <nav>
     <v-app-bar app flat>
+      <v-app-bar-nav-icon depressed @click="drawer = !drawer">
+        <v-icon color="pink">mdi-menu</v-icon>
+      </v-app-bar-nav-icon>
       <v-app-bar-title class="grey--text">哈哈</v-app-bar-title>
       <v-app-bar-title class="pink--text lighten-2">我的</v-app-bar-title>
 
       <v-spacer></v-spacer>
-
-      <v-app-bar-nav-icon depressed @click="drawer = !drawer">
-        <v-icon color="pink">mdi-menu</v-icon>
-      </v-app-bar-nav-icon>
 
       <v-app-bar-nav-icon depressed href="https://github.com/miloweimo">
         <v-icon color="pink">mdi-github</v-icon>
