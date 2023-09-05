@@ -9,29 +9,15 @@
 ## 启动项目
   
   ```bash
+  # 进入项目目录
+  # ➜  demo git:(main) pwd
+  # /Users/weimo/mine/code/demo
   npm install
-  npm run dev
+  npm run dev:haha
   ```
 
 ## 新模块开发流程
 
-1. 在`src/modules`目录下新建模块目录, 如`src/modules/testpage`
-2. 在`src/modules/testpage`目录下新建`index.vue`文件, 作为模块的入口文件
-3. 在`src/router.js`中添加路由配置, 如:
-
-  ```javascript
-  {
-    path: '/test',
-    name: 'test',
-    component: resolve => require(['@/pages/test'], resolve)
-  }
-  ```\
-4. 在`src/components/Navbar.vue`中添加路由配置, 如:
-
-  ```javascript
-  {
-    title: '测试',
-    icon: 'mdi-clipboard-text-outline',
-    linkto: '/test'
-  }
-  ```
+1. 复制packages/haha/src/modules/template/ 文件夹
+2. 修改文件夹内容名字
+3. 添加packages/haha/src/modules.js配置
