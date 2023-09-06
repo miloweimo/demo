@@ -19,7 +19,7 @@
     ></v-text-field>
     <hr class="my-2" />
     <p>_防抖函数 参考<a href="https://github.com/lodash/lodash/blob/4.17.15/lodash.js#L10304">lodash源码</a></p>
-    <p>使用注意一定要看 https://css-tricks.com/debouncing-throttling-explained-examples </p>
+    <p>使用注意一定要看 <a href="https://css-tricks.com/debouncing-throttling-explained-examples">https://css-tricks.com/debouncing-throttling-explained-examples</a> </p>
     <v-btn @click="msg = '', count = 0">清空</v-btn>
     <v-btn @click="handleClickH">_防抖函数 最后事件有效</v-btn>
     <v-btn @dblclick="handleClickH">_防抖函数 最后事件有效 + dbl</v-btn>
