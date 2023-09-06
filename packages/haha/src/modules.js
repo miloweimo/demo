@@ -14,8 +14,10 @@ export const routerModules = {
 };
 
 // packages/haha/src/components/core/Navbar.vue
+// href 优先于 linkto
 export const navModules = [
   { title: "Home", icon: "mdi-home-variant-outline", linkto: "/" },
+  { title: "小工具", icon: "mdi-pistol", href: "https://miloweimo.github.io/utilities/#/" },
   { title: "Demo", icon: "mdi-teddy-bear", linkto: "/demo" },
   { title: "Test", icon: "mdi-test-tube", linkto: "/test" },
   { title: "css 居中", icon: "mdi-format-float-center", linkto: "/center" },

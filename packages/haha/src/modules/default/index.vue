@@ -5,7 +5,7 @@
       v-for="item,key in navModules"
       :key="key"
       class="mr-2"
-      :href="`#${item.linkto}`"
+      :href="`${item.href || '#'+item.linkto}`"
     >
       {{ item.title }}
     </a>

@@ -40,7 +40,7 @@
           v-for="item in items"
           :key="item.title"
           link
-          @click="handle(item.linkto)"
+          @click="handle(item)"
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
@@ -73,7 +73,14 @@ export default {
     this.items = navModules;
   },
   methods: {
-    handle(path) {
+    handle(item) {
+      const { path, href } = item;
+      if (href) {
+        // window.open(href);
+        // 页内跳转
+        window.location.href = href;
+        return;
+      }
       if (path === this.$router.currentRoute.fullPath) return;
       this.$router.push({ path: path });
     },
