@@ -74,13 +74,14 @@ export default {
   },
   methods: {
     handle(item) {
-      const { path, href } = item;
+      const { linkto: path, href } = item;
       if (href) {
         // window.open(href);
         // 页内跳转
         window.location.href = href;
         return;
       }
+      console.log(path, this.$router.currentRoute.fullPath);
       if (path === this.$router.currentRoute.fullPath) return;
       this.$router.push({ path: path });
     },
