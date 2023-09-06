@@ -6,7 +6,9 @@
     </p>
     <v-btn @click="msg = '', count = 0">清空</v-btn>
     <v-btn @click="handleClick">不防抖</v-btn>
+    <v-btn @dblclick="handleClick">不防抖 + 双击</v-btn>
     <v-btn @click="handleClick2">简单防抖 {{ delay }}ms</v-btn>
+    <v-btn @dblclick="handleClick2">简单防抖 {{ delay }}ms + 双击</v-btn>
     <v-text-field
       dense
       outlined
@@ -20,6 +22,7 @@
     <p>使用注意一定要看 https://css-tricks.com/debouncing-throttling-explained-examples </p>
     <v-btn @click="msg = '', count = 0">清空</v-btn>
     <v-btn @click="handleClickH">_防抖函数 最后事件有效</v-btn>
+    <v-btn @dblclick="handleClickH">_防抖函数 最后事件有效 + dbl</v-btn>
     <v-btn @click="cancelDebounce">立即取消运行中的防抖函数</v-btn>
     <v-btn @click="execDebounce">立即执行运行中的防抖函数</v-btn>
     <hr class="my-2" />
