@@ -12,6 +12,7 @@ export const routerModules = {
   debounce: require.context('./modules/debounce', true, /\broutes\b\.js$/),
   throttle: require.context('./modules/throttle', true, /\broutes\b\.js$/),
   aggrid: require.context('./modules/aggrid', true, /\broutes\b\.js$/),
+  position: require.context('./modules/position', true, /\broutes\b\.js$/),
 };
 
 // packages/haha/src/components/core/Navbar.vue
@@ -29,6 +30,7 @@ export const navModules = [
   { title: "debounce防抖", icon: "mdi-timer-check", linkto: "/debounce" },
   // { title: "throttle节流", icon: "mdi-timer-sand", linkto: "/throttle" },
   { title: "aggrid", icon: "mdi-grid", linkto: "/aggrid" },
+  { title: "网页元素位置", icon: "mdi-compass-rose", linkto: "/position" },
 ];
 
 export const storeModules = {
