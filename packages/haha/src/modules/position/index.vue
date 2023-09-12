@@ -4,6 +4,7 @@
     <p>{{ window?.innerWidth || document?.documentElement?.clientWidth || document?.body?.clientWidth }}
     {{ window?.innerHeight || document?.documentElement?.clientHeight || document?.body?.clientHeight }}
     视口大小: {{ viewport }} 实时: {{ viewportRealtime }}</p>
+    <v-btn @click="resetBox" class="mb-2">回到原位</v-btn>
     <div ref="box" class="box" @mousedown="isSelectBox = true">
       {{ boxx }} {{ boxy }}
     </div>
@@ -84,6 +85,13 @@ export default {
         boxElement.style.left = `${this.boxx + e.movementX}px`;
         boxElement.style.top = `${this.boxy + e.movementY}px`;
       }
+    },
+    resetBox() {
+      // 删除left top
+      this.$refs.box.style.left = '';
+      this.$refs.box.style.top = '';
+      this.getBoxPosition();
+      this.isSelectBox = false;
     }
   },
 
