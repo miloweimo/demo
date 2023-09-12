@@ -22,7 +22,7 @@ export const navModules = [
   { title: "Demo", icon: "mdi-teddy-bear", linkto: "/demo" },
   { title: "Test", icon: "mdi-test-tube", linkto: "/test" },
   { title: "css 居中", icon: "mdi-format-float-center", linkto: "/center" },
-  { title: "dayjs", icon: "mdi-calendar", linkto: "/dayjs" },
+  { title: "dayjs 日期转换", icon: "mdi-calendar", linkto: "/dayjs" },
   { title: "Modal 模态弹窗", icon: "mdi-message-badge-outline", linkto: "/modal" },
   { title: "组件循环依赖", icon: "mdi-sync", linkto: "/comploop" },
   { title: "echarts", icon: "mdi-chart-sankey", linkto: "/echarts" },
