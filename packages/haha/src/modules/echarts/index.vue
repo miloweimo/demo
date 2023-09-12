@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div id="main" style="width: 600px;height:400px;"></div>
+    <div
+      id="main"
+      style="width: 600px;height:400px;"
+    />
   </div>
 </template>
 
@@ -8,6 +11,8 @@
 import * as echarts from 'echarts';
 
 export default {
+  computed: {
+  },
   mounted() {
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));
@@ -29,8 +34,6 @@ export default {
         }
       ]
     });
-  },
-  computed: {
   },
 }
 </script>

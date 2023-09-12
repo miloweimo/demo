@@ -4,30 +4,50 @@
     <p>
       在 JavaScript 中，防抖（debounce）函数可以确保你的代码在每个用户输入时只被触发一次。搜索框建议、文本字段自动保存和消除双键点击都是防抖的用例。
     </p>
-    <v-btn @click="msg = '', count = 0">清空</v-btn>
-    <v-btn @click="handleClick">不防抖</v-btn>
-    <v-btn @dblclick="handleClick">不防抖 + 双击</v-btn>
-    <v-btn @click="handleClick2">简单防抖 {{ delay }}ms</v-btn>
-    <v-btn @dblclick="handleClick2">简单防抖 {{ delay }}ms + 双击</v-btn>
+    <v-btn @click="msg = '', count = 0">
+      清空
+    </v-btn>
+    <v-btn @click="handleClick">
+      不防抖
+    </v-btn>
+    <v-btn @dblclick="handleClick">
+      不防抖 + 双击
+    </v-btn>
+    <v-btn @click="handleClick2">
+      简单防抖 {{ delay }}ms
+    </v-btn>
+    <v-btn @dblclick="handleClick2">
+      简单防抖 {{ delay }}ms + 双击
+    </v-btn>
     <v-text-field
+      v-model="delay"
       dense
       outlined
-      v-model="delay"
       type="number"
       label="防抖时间ms"
       style="display: inline-block;width: max-content;"
-    ></v-text-field>
-    <hr class="my-2" />
+    />
+    <hr class="my-2">
     <p>_防抖函数 参考<a href="https://github.com/lodash/lodash/blob/4.17.15/lodash.js#L10304">lodash源码</a></p>
     <p>使用注意一定要看 <a href="https://css-tricks.com/debouncing-throttling-explained-examples">https://css-tricks.com/debouncing-throttling-explained-examples</a> </p>
-    <v-btn @click="msg = '', count = 0">清空</v-btn>
-    <v-btn @click="handleClickH">_防抖函数 最后事件有效</v-btn>
-    <v-btn @dblclick="handleClickH">_防抖函数 最后事件有效 + dbl</v-btn>
-    <v-btn @click="cancelDebounce">立即取消运行中的防抖函数</v-btn>
-    <v-btn @click="execDebounce">立即执行运行中的防抖函数</v-btn>
-    <hr class="my-2" />
+    <v-btn @click="msg = '', count = 0">
+      清空
+    </v-btn>
+    <v-btn @click="handleClickH">
+      _防抖函数 最后事件有效
+    </v-btn>
+    <v-btn @dblclick="handleClickH">
+      _防抖函数 最后事件有效 + dbl
+    </v-btn>
+    <v-btn @click="cancelDebounce">
+      立即取消运行中的防抖函数
+    </v-btn>
+    <v-btn @click="execDebounce">
+      立即执行运行中的防抖函数
+    </v-btn>
+    <hr class="my-2">
     <div>
-      输出：{{count}}<br />
+      输出：{{ count }}<br>
       {{ msg }}
     </div>
   </div>

@@ -3,23 +3,64 @@
     <h1>浏览器 Modal 模态弹窗</h1>
     <p>原生alert级别的modal <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog">MDN The Dialog element</a></p>
     <div>
-      <button class="btn" onclick="dog.showModal()">showModal dialog</button>
-      <button class="btn" onclick="dog.show()">show dialog</button>
-      <button class="btn" onclick="dog.close()">Close dialog</button>
+      <button
+        class="btn"
+        onclick="dog.showModal()"
+      >
+        showModal dialog
+      </button>
+      <button
+        class="btn"
+        onclick="dog.show()"
+      >
+        show dialog
+      </button>
+      <button
+        class="btn"
+        onclick="dog.close()"
+      >
+        Close dialog
+      </button>
       <dialog id="dog">
-        <div style="position: relative;" class="win">
-          <button style="position: absolute;top: 5px;right: 5px;" onclick="dog.close()"><v-icon>mdi-close</v-icon></button>
-          <h1 style="align-items: start;">Modal </h1>
+        <div
+          style="position: relative;"
+          class="win"
+        >
+          <button
+            style="position: absolute;top: 5px;right: 5px;"
+            onclick="dog.close()"
+          >
+            <v-icon>mdi-close</v-icon>
+          </button>
+          <h1 style="align-items: start;">
+            Modal
+          </h1>
           <p>Modal content</p>
           <div>
-            Input Text: <input type="text" style="border: 1px solid;">
+            Input Text: <input
+              type="text"
+              style="border: 1px solid;"
+            >
           </div>
           <div class="mt-1">
-            Input Text: <input type="text" style="border: 1px solid;">
+            Input Text: <input
+              type="text"
+              style="border: 1px solid;"
+            >
           </div>
           <div class="my-2">
-            <button class="sbtn" onclick="dog.close()">Cancel dialog</button>
-            <button class="sbtn" onclick="dog.close()">Comfirm dialog</button>
+            <button
+              class="sbtn"
+              onclick="dog.close()"
+            >
+              Cancel dialog
+            </button>
+            <button
+              class="sbtn"
+              onclick="dog.close()"
+            >
+              Comfirm dialog
+            </button>
           </div>
         </div>
       </dialog>
@@ -31,9 +72,9 @@
 <script>
 
 export default {
-  created() {
-  },
   computed: {
+  },
+  created() {
   },
 
 }

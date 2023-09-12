@@ -3,11 +3,12 @@
     <h1>aggrid</h1>
     <!-- npm install --save ag-grid-community ag-grid-vue vue-property-decorator@^8.0.0 -w @demo/haha -->
     <hr class="my-2">
-    <ag-grid-vue style="height: 500px;"
-        class="ag-theme-alpine"
-        :columnDefs="columnDefs"
-        :rowData="rowData">
-    </ag-grid-vue>
+    <ag-grid-vue
+      style="height: 500px;"
+      class="ag-theme-alpine"
+      :column-defs="columnDefs"
+      :row-data="rowData"
+    />
     <hr class="my-2">
   </div>
 </template>
@@ -16,14 +17,14 @@ import { AgGridVue } from "ag-grid-vue";
 
 export default {
   name: "Aggrid",
+  components: {
+    AgGridVue,
+  },
   data() {
     return {
       columnDefs: null,
       rowData: null,
     };
-  },
-  components: {
-    AgGridVue,
   },
   beforeMount() {
     this.columnDefs = [

@@ -11,11 +11,11 @@
 import { mapState } from 'vuex'
 
 export default {
-  created() {
-    console.log('demo created')
-  },
   computed: {
     ...mapState('demo', ['msg']),
+  },
+  created() {
+    console.log('demo created')
   },
 
 }

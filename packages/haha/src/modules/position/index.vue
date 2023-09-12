@@ -1,11 +1,27 @@
 <template>
-  <div style="position: relative;border: 1px solid;" :style="`height: ${height - 80}px;`" @mousemove="handleDragBox" @mouseup="isSelectBox = false">
+  <div
+    style="position: relative;border: 1px solid;"
+    :style="`height: ${height - 80}px;`"
+    @mousemove="handleDragBox"
+    @mouseup="isSelectBox = false"
+  >
     <h1>元素位置</h1>
-    <p>{{ window?.innerWidth || document?.documentElement?.clientWidth || document?.body?.clientWidth }}
-    {{ window?.innerHeight || document?.documentElement?.clientHeight || document?.body?.clientHeight }}
-    视口大小: {{ viewport }} 实时: {{ viewportRealtime }}</p>
-    <v-btn @click="resetBox" class="mb-2">回到原位</v-btn>
-    <div ref="box" class="box" @mousedown="isSelectBox = true">
+    <p>
+      {{ window?.innerWidth || document?.documentElement?.clientWidth || document?.body?.clientWidth }}
+      {{ window?.innerHeight || document?.documentElement?.clientHeight || document?.body?.clientHeight }}
+      视口大小: {{ viewport }} 实时: {{ viewportRealtime }}
+    </p>
+    <v-btn
+      class="mb-2"
+      @click="resetBox"
+    >
+      回到原位
+    </v-btn>
+    <div
+      ref="box"
+      class="box"
+      @mousedown="isSelectBox = true"
+    >
       {{ boxx }} {{ boxy }}
     </div>
   </div>
@@ -28,6 +44,14 @@ export default {
       boxy: 0,
     };
   },
+  computed: {
+    viewport() {
+      const width = document.body.clientWidth;
+      const height = document.body.clientHeight;
+      const viewport = `${width} x ${height}`;
+      return viewport;
+    },
+  },
   created() {
     window.addEventListener("resize", this.resizeHandler);
   },
@@ -37,14 +61,6 @@ export default {
   },
   destroyed() {
     window.removeEventListener("resize", this.resizeHandler);
-  },
-  computed: {
-    viewport() {
-      const width = document.body.clientWidth;
-      const height = document.body.clientHeight;
-      const viewport = `${width} x ${height}`;
-      return viewport;
-    },
   },
   methods: {
     getViewport() {
