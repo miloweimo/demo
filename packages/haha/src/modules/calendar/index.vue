@@ -35,10 +35,12 @@ export default {
     CalendarCard,
   },
   props: {
-    dates: {
-      type: Array,
-      default: () => [] // [ { date: '2020-12-12', type: 'error' }]
-    },
+    // dates: {
+    //   type: Array,
+    //   default: () => [
+    //     // {date: '2023-01-01', type: 'good'},
+    //   ]
+    // },
     securityDays: {
       type: Number,
       default: 0
@@ -57,6 +59,27 @@ export default {
     },
     errorCount() {
       return this.dates.filter(item => item.type === 'error').length
+    },
+    dates() {
+      let list = [
+        {date: '01-01', type: 'good', name: '元旦'},
+        // {date: '02-26', type: 'good', name: '春节'}, // fake
+        // {date: '02-27', type: 'good', name: '春节'}, // fake
+        // {date: '02-28', type: 'good', name: '春节'}, // fake
+        // {date: '04-04', type: 'good', name: '清明'}, // fake
+        {date: '05-01', type: 'good', name: '劳动节'},
+        // {date: '05-04', type: 'good', name: '端午'}, // fake
+        // {date: '05-04', type: 'good', name: '中秋'}, // fake
+        {date: '10-01', type: 'good', name: '国庆节'},
+        {date: '10-02', type: 'good', name: '国庆节'},
+        {date: '10-03', type: 'good', name: '国庆节'},
+      ]
+      list = list.map(item => ({
+        ...item,
+        date: new Date().getFullYear() + '-' + item.date,
+      }))
+      console.log(list);
+      return list;
     },
   },
   methods: {
