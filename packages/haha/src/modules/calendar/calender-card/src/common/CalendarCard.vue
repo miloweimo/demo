@@ -1,17 +1,48 @@
 <template>
   <div class="kuan-calendar">
     <div class="calendar-header">
-      <i @click="renderPreYear" class="iconfont icon-doubleleft"></i>
-      <i @click="renderPreMonth" class="iconfont icon-left"></i>
-      <div class="current-date">{{y}}-{{m}}</div>
-      <i @click="renderNextMonth" class="iconfont icon-right"></i>
-      <i @click="renderNextYear" class="iconfont icon-doubleright"></i>
+      <i
+        class="iconfont icon-doubleleft"
+        @click="renderPreYear"
+      />
+      <i
+        class="iconfont icon-left"
+        @click="renderPreMonth"
+      />
+      <div class="current-date">
+        {{ y }}-{{ m }}
+      </div>
+      <i
+        class="iconfont icon-right"
+        @click="renderNextMonth"
+      />
+      <i
+        class="iconfont icon-doubleright"
+        @click="renderNextYear"
+      />
     </div>
     <div class="weeks">
-      <div v-for="week in weeks" :key="week" class="week">{{week}}</div>
+      <div
+        v-for="week in weeks"
+        :key="week"
+        class="week"
+      >
+        {{ week }}
+      </div>
     </div>
-    <calendar-item :mode="mode" :value="valueArr" @click="select" :year="y" :month="m"></calendar-item>
-    <div @click="renderToday" class="footer">今天</div>
+    <calendar-item
+      :mode="mode"
+      :value="valueArr"
+      :year="y"
+      :month="m"
+      @click="select"
+    />
+    <div
+      class="footer"
+      @click="renderToday"
+    >
+      今天
+    </div>
   </div>
 </template>
 

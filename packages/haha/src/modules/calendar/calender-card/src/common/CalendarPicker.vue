@@ -1,7 +1,17 @@
 <template>
-  <div class="kuan-calendar-outer" :class="{active: visible}">
-    <div v-if="visible" @click="visible = false" class="close-bg"></div>
-    <div class="kuan-calendar-picker" :class="{active: visible}">
+  <div
+    class="kuan-calendar-outer"
+    :class="{active: visible}"
+  >
+    <div
+      v-if="visible"
+      class="close-bg"
+      @click="visible = false"
+    />
+    <div
+      class="kuan-calendar-picker"
+      :class="{active: visible}"
+    >
       <input
         :value="computedValue"
         readonly
@@ -12,11 +22,11 @@
       <transition name="calendar">
         <calendar
           v-if="visible"
-          @input="change"
           :mode="mode"
           :value="value"
           :year="year"
           :month="month"
+          @input="change"
         />
       </transition>
     </div>
@@ -68,6 +78,7 @@ export default {
       if (this.mode === 'range') {
         return this.value.join('至')
       }
+      return this.value
     }
   },
   methods: {

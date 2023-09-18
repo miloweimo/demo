@@ -7,7 +7,9 @@
       class="day-item"
       @click="itemClick(item)"
     >
-      <div class="day">{{item.day}}</div>
+      <div class="day">
+        {{ item.day }}
+      </div>
     </div>
   </div>
 </template>
