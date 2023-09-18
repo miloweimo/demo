@@ -2,13 +2,13 @@
   <div class="month">
     <div
       class="d-flex flex-wrap px-4"
-      style=""
+      style="height: 100%;"
     >
       <div
         v-for="i in 12"
         :key="i" 
         class="pa-3"
-        style="width: 25%;height: 280px;border: 1px solid none;overflow: auto;"
+        style="width: 25%;border: 1px solid none;overflow: auto;"
       >
         <div
           style="text-align: center;border-radius: 5px;"
@@ -88,6 +88,7 @@ $main: #e91e63;
 $background: #e8f0ff;
 .month {
   width: 100%;
+  height: 100%;
   background: linear-gradient(to top, #e8f0ff, #00aaff00);
   border-radius: 10px;
 }
