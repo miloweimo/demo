@@ -1,12 +1,10 @@
 <template>
-  <div id="app">
-    <v-app class="grey lighten-3">
-      <Navbar />
-      <v-main class="mx-4 my-1">
-        <router-view />
-      </v-main>
-    </v-app>
-  </div>
+  <v-app>
+    <Navbar />
+    <v-main class="mx-4 my-1">
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
