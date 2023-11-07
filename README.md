@@ -6,4 +6,4 @@
 
 仓库地址 <https://github.com/miloweimo/demo>
 
-源代码仓库 <https://github.com/miloweimo/demo-vue2>
+源代码仓库 <https://github.com/miloweimo/demo-vue3>

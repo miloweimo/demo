@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["default"],{"045b":function(n,t,e){"use strict";e.r(t);var u=function(){var n=this;n._self._c;return n._m(0)},l=[function(){var n=this,t=n._self._c;return t("div",[t("h1",[n._v("Default")])])}],r={},s=r,a=e("2be6"),c=Object(a["a"])(s,u,l,!1,null,null,null);t["default"]=c.exports}}]);
-//# sourceMappingURL=default.a3c96b68.js.map

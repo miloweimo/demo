@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["demo"],{a713:function(e,s,o){"use strict";o.r(s);var t=function(){var e=this,s=e._self._c;return s("div",[s("h1",[e._v("demo")]),s("div",[e._v("store msg: "+e._s(e.msg))]),s("div",[e._v("i18n: "+e._s(this.$t("msg")))]),s("div",[e._v("i18n demo: "+e._s(this.$t("demo.msg")))])])},d=[],n=o("9ce4"),i={created(){console.log("demo created")},computed:{...Object(n["b"])("demo",["msg"])}},c=i,m=o("2be6"),l=Object(m["a"])(c,t,d,!1,null,null,null);s["default"]=l.exports}}]);
-//# sourceMappingURL=demo.fd162780.js.map
