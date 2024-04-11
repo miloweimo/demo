@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["equal-columns-with-flexbox"],{ef1c:function(t,e,l){"use strict";l.r(e);var n=function(){var t=this,e=t._self._c;return e("div",{staticClass:"pa-4",staticStyle:{height:"100%"}},[e("router-view")],1)},s=[],i={},u=i,a=l("2be6"),c=Object(a["a"])(u,n,s,!1,null,null,null);e["default"]=c.exports}}]);
+//# sourceMappingURL=equal-columns-with-flexbox.3ff23038.js.map
