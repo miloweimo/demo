@@ -1,0 +1,8 @@
+Model Information:
+* title:	Free AC Unit
+* source:	https://sketchfab.com/3d-models/free-ac-unit-08223d7724f54639b06cb2b276b6d252
+* author:	vertexmonster (https://sketchfab.com/vertexmonster)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
